@@ -68,6 +68,7 @@ contact: 'hartman@itc.rwth-aachen.de' # FIXME
 # Order of episodes in your lesson
 episodes:
 - 01-uv-and-the-environment.md
+- 02-introduction-to-streamlit.md
 
 # Information for Learners
 learners:
