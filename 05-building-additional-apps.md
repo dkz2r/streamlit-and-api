@@ -1,18 +1,18 @@
 ---
-title: "Using Markdown"
+title: "Creating Additional Apps"
 teaching: 10 # teaching time in minutes
 exercises: 2 # exercise time in minutes
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions
 
--
+- What are some other apps I can build with Streamlit and APIs?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
--
+- Experiment with building different types of apps using Streamlit and APIs
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
