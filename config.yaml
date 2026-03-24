@@ -70,6 +70,8 @@ episodes:
 - 01-uv-and-the-environment.md
 - 02-introduction-to-streamlit.md
 - 03-getting-data-from-an-api.md
+- 04-secrets-and-apis.md
+- 05-building-additional-apps.md
 
 # Information for Learners
 learners:

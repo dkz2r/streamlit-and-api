@@ -193,7 +193,7 @@ We have a couple additional dependencies that we need to add for our project, so
 now:
 
 ```bash
-uv add pandas requests python-dotenv
+uv add pandas requests coscine python-dotenv
 ```
 
 And with that, we're ready to start building a Streamlit app!
