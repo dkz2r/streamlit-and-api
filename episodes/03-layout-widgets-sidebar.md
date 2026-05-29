@@ -279,6 +279,56 @@ with st.expander("This is my Expander Object"):
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Challenge 2: Practice with Session State and Callback Functions
+
+Add the following widgets to your application:
+
+- A Slider that goes from -10 to 10 with a default value of 0
+- A Number input that accepts any value.
+- A Button that says "Calculate"
+- A Text Element that starts out with the text: "Result: 0"
+
+When the "Calculate" button is clicked, we should see the result update to the sum of the values in
+the slider and the number input, but **only** when the button is clicked. Interacting with the
+slider and number input should not update the result until the button is clicked.
+
+
+::: hint
+
+You'll need to use a session state to store the result, and a callback function to update the result
+when the button is clicked.
+
+:::
+
+::: hint
+
+Make sure to initialize the session state for the result before the `st.write` statement.
+
+:::
+
+:::::::::::::::::::::::: solution
+
+```python
+if "result" not in st.session_state:
+    st.session_state.result = 0
+
+
+def do_calculation():
+    st.session_state.result = slider_value + new_number
+
+
+slider_value = st.slider("Select a value", -10, 10, 0)
+new_number = st.number_input("Enter a number", value=0)
+st.button("Calculate", on_click=do_calculation)
+st.write(f"Result: {st.session_state.result}")
+```
+
+:::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
