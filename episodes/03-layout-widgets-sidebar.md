@@ -275,7 +275,6 @@ with st.expander("This is my Expander Object"):
     st.write("that can be used to hide content until the user wants to see it.")
 ```
 
-
 :::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
