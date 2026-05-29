@@ -119,7 +119,6 @@ to include some markdown:
 
 ```python
 import streamlit as st
-import pandas as pd
 
 st.title("Hello, Streamlit!")
 
@@ -154,7 +153,7 @@ collapse it.
 ![](fig/02-introduction-to-streamlit/streamlit-write-list.png){alt="Streamlit List Display"}
 
 Let's try passing a different data object to `st.write`. Let's make a simple pandas DataFrame and
-pass that to `st.write`:
+pass that to `st.write` (We'll need to make sure to import pandas at the top of our script as well):
 
 ```python
 import streamlit as st
