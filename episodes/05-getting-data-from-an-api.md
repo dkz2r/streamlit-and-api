@@ -20,6 +20,12 @@ exercises: 2 # exercise time in minutes
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+## Getting our Data
+
+We've talked in a very abstract way about "getting data from the API", but what does this actually
+mean in practice? In this section we'll talk about what APIs are, how to make requests to an API,
+and how to parse the responses we get back from the API.
+
 ## What is an API?
 
 "API" stands for "Application Programming Interface", and is a set of rules and protocols that
@@ -59,11 +65,11 @@ make a request like `https://my-bus-info-example.com/api?stop="My Street 123, My
 For our application, we're going to be using the Open Meteo API, which provides weather data. You
 can find the documentation for the API here: https://open-meteo.com/en/docs#api_documentation.
 
-We can see that there is an endpoint for the API called "/v1/forcast/" that has a number of
+We can see that there is an endpoint for the API called "/v1/forecast/" that has a number of
 parameters that we can use to specify the exact data we want to retrieve. There are two required
 parameters: `latitude` and `longitude`, which specify the location for which we want to retrieve
 the weather data. There are also a number of optional parameters we can use to specify what data
-we recieve. Let's craft a request by hand:
+we receive. Let's craft a request by hand:
 
 - Latitude: 50.77664
 - Longitude: 6.08342
@@ -215,44 +221,6 @@ daily_data = data["daily"]
 print(daily_data)
 ```
 
-## Incorporating API data into our Streamlit app
-
-Now that we've seen how to make API requests and parse the responses, let's start putting together
-a streamlit app that does this for us. We'll start with just a very basic app like we did in
-episode 2. Feel free to copy and paste the following code or write your own from scratch into a
-new file called `weather_app.py`:
-
-```python
-import streamlit as st
-
-st.title("Weather Forecast App")
-st.write("This app retrieves weather data from the Open Meteo API and displays it here.")
-```
-
-### Adding Widgets to specify API parameters
-
-The base of the API URL will always be the same, so we'll make that a constant at the top of our
-script:
-
-```python
-import streamlit as st
-
-API_URL = "https://api.open-meteo.com/v1/forecast"
-
-st.title("Weather Forecast App")
-st.write("This app retrieves weather data from the Open Meteo API and displays it here.")
-
-```
-And then let's add two text input widgets to allow the user to specify the latitude and longitude
-parameters for the API request:
-
-```python
-lat_lon_columns = st.columns(2)
-with lat_lon_columns[0]:
-    latitude = st.text_input("Latitude", value="50.77664")
-with lat_lon_columns[1]:
-    longitude = st.text_input("Longitude", value="6.08342")
-```
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
