@@ -318,6 +318,18 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush9">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading9">
+        <a href="08-working-with-plotly.html">8. Working with Plotly</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -878,7 +890,7 @@ personalized greeting.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <p>Use the slider example as a reference.</p>
 </div>
@@ -890,7 +902,7 @@ personalized greeting.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -922,7 +934,7 @@ of your choice and some text.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -964,7 +976,7 @@ value.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2588,6 +2600,370 @@ any links that you are not going to use.
 </div>
 </div>
 </div>
+<section><h2 class="section-heading" id="visualization-concepts">Visualization Concepts<a class="anchor" aria-label="anchor" href="#visualization-concepts"></a>
+</h2>
+<hr class="half-width">
+<p>Before we dive into the code for making visuals, let’s talk about a
+few concepts</p>
+<div class="section level3">
+<h3 id="why-make-visuals">Why make visuals?<a class="anchor" aria-label="anchor" href="#why-make-visuals"></a>
+</h3>
+<p>For the most part, humans are visual creatures. We can process
+information far faster in a visual format than in text. We are also
+fantastic pattern recognizsers, and can often spot trends and insigts in
+data when it’s presented in a visual format that we might miss if we
+were just looking at a table of numbers.</p>
+<p>This is why one of the earliest things we learn in data science is to
+take a look at our data and try a few basic views of it. Take this
+example. Here’s a table of temperatures of three cities over a year:</p>
+<figure><img src=".././fig/07-making-visuals/city-temp-table.PNG" alt="Table of temperatures for three cities over a year" class="figure mx-auto d-block"><div class="figcaption">Table of temperatures for three cities over a
+year</div>
+</figure><p>Do you see any trends? What can you say about each of the cities
+based on this table?</p>
+<p>Now let’s look at the same data in a line plot:</p>
+<figure><img src=".././fig/07-making-visuals/city-temp-figure.PNG" alt="Line plot of temperatures for three cities over a year" class="figure mx-auto d-block"><div class="figcaption">Line plot of temperatures for three cities over
+a year</div>
+</figure><p>Even without knowing anything about the cities, we can see that one
+of the cities has it’s lower temperatures in the middle of the year,
+while the other two have their lower temperatures at the beginning and
+end of the year - suggesting that the first city is in the southern
+hemisphere, while the other two are in the northern hemisphere.</p>
+<p>Now you might have been able to spot that trend in the table, but the
+cognitive load of processing the numbers and comparing them across rows
+and columns is much higher than just looking at the lines in the
+chart.</p>
+</div>
+<div class="section level3">
+<h3 id="what-makes-a-visualization-effective">What makes a Visualization Effective?<a class="anchor" aria-label="anchor" href="#what-makes-a-visualization-effective"></a>
+</h3>
+<p>The effectiveness of a visual depends on a variety of factors, not
+just “is it attractive”. Some factors are immediate:</p>
+<ul>
+<li>Color choice: Are the colors you chose easy to distinguish? Do they
+have enough contrast with the background? Are they colorblind
+friendly?</li>
+<li>Size and scale: Is the size of the plot appropriate for the amount
+of data being displayed? Are the axes scaled appropriately to show the
+trends in the data?</li>
+<li>Labels and titles: Are the axes labeled clearly? Is there a title
+that explains what the plot is showing?</li>
+<li>Elements: Are there too many elements in the plot that make it
+cluttered and hard to read? Or are there too few, leaving large white
+spaces that make it hard to interpret the data?</li>
+</ul>
+<p>Other factors are more subjective and depend on the context of the
+data and the audience:</p>
+<ul>
+<li>Storytelling: Does the visual tell a story with the data? Does it
+highlight the most important insights and trends in the data?</li>
+<li>Aesthetics: Is the visual appealing to look at? Does it draw the
+viewer in and make them want to explore the data further?</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="example-charles-joseph-minards-map-of-napoleons-russian-campaign">Example: Charles Joseph Minard’s Map of Napoleon’s Russian
+Campaign<a class="anchor" aria-label="anchor" href="#example-charles-joseph-minards-map-of-napoleons-russian-campaign"></a>
+</h3>
+<p>The image below is one of the most famous visualizations, created by
+Charles Joseph Minard in 1869 to show Napolean’s disastrous campaign in
+Russia.</p>
+<figure><img src=".././fig/07-making-visuals/minard-napolean.png" alt="Charles Joseph Minard's Map of Napoleon's Russian Campaign" class="figure mx-auto d-block"><div class="figcaption">Charles Joseph Minard’s Map of Napoleon’s
+Russian Campaign</div>
+</figure><div id="discussion1" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<span class="callout-header">Discussion</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>What makes this visualization effective?</p>
+<ul>
+<li>Width of the lines clearly indicates the size of the army at each
+point in the campaign</li>
+<li>Geographic information is included to show the path of the
+campaign</li>
+<li>Temperature is included to show the impact of the cold on the army
+during the retreat</li>
+<li>Notations are included to provide clear context for the data</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="example-a-deliberatly-bad-visualization">Example: A deliberatly bad visualization<a class="anchor" aria-label="anchor" href="#example-a-deliberatly-bad-visualization"></a>
+</h3>
+<p>Here’s a deliberatly bad visualization of some random data.</p>
+<figure><img src=".././fig/07-making-visuals/bad-figure-example.PNG" alt="Deliberatly bad visualization" class="figure mx-auto d-block"><div class="figcaption">Deliberatly bad visualization</div>
+</figure><div id="discussion2" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<span class="callout-header">Discussion</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>What makes this visualization ineffective?</p>
+<ul>
+<li>Clashing color palette</li>
+<li>Inappropriate use of a 3D plot, which distorts the data and makes it
+hard to read</li>
+<li>Lack of clear labels and titles</li>
+<li>Too many elements in the plot, making it cluttered and hard to
+read</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="pre-attentive-attributes">Pre-attentive Attributes<a class="anchor" aria-label="anchor" href="#pre-attentive-attributes"></a>
+</h3>
+<p>Visualizations can rely on “Pre-attentive attributes” in an image to
+draw the viewer’s attention to certain details before they can even
+consciously process the information. These attributes include things
+like color, size, shape, and position. Take a look at the image below
+for some examples</p>
+<figure><img src=".././fig/07-making-visuals/bp_why_visual_analytics.png" alt="Examples of pre-attentive attributes" class="figure mx-auto d-block"><div class="figcaption">Examples of pre-attentive attributes</div>
+</figure><p>(Image source <a href="https://www.tableau.com/learn/articles/why-visual-analytics" class="external-link">Why
+Visual Analytics?</a>)</p>
+<p>Going back to our table example above, there’s nothing to say that a
+table is <em>never</em> an effective way of presenting data. Imagine a
+table of sales figures by store, where the horizontal axis is the total
+revenue for each store, and the vertical axis is the name of the store.
+We could color the text or fill the background of the cells based on the
+revenue to quickly draw attention to the highest and lowest performing
+stores.</p>
+</div>
+<div class="section level3">
+<h3 id="color-selection">Color Selection<a class="anchor" aria-label="anchor" href="#color-selection"></a>
+</h3>
+<p>Color is one of the most powerful pre-attentive attributes, drawing
+attention to certain elements in a plot and helping to distinguish
+between different elements. We can use color as a pre-attentive atribute
+- for example, using red/blue to indicate temperatures.</p>
+<p>Typically, when making plots, we have a few different types of color
+schemes to choose from:</p>
+<ul>
+<li>Qualitative: These are color schemes that are designed to
+distinguish between different categories of data. They typically use a
+variety of colors that are easily distinguishable from each other. There
+is no inherint order to the colors.</li>
+<li>Sequential: These are color schemes that are designed to show a
+progression of values. They typically use a a single color that varies
+in intensity, with lighter colors representing lower values and darker
+colors representing higher values.</li>
+<li>Diverging: These are color schemes that are designed to show a
+progression of values that diverge from a central point. They typically
+use two different colors that vary in intensity, with one color
+representing values above the central point and the other color
+representing values below the central point.</li>
+</ul>
+</div>
+</section><section><h2 class="section-heading" id="deciding-to-create-a-plot">Deciding to Create a Plot<a class="anchor" aria-label="anchor" href="#deciding-to-create-a-plot"></a>
+</h2>
+<hr class="half-width">
+<p>When we have some data that we want to display, we should first
+decide “What is the question I want to answer with this plot?”. This
+will help us shape what kind of plot we want to create and what data to
+include.</p>
+<p>Next, chose a way of conveying the information needed to answer the
+question. Keep in mind things like:</p>
+<ul>
+<li>How many categories are we showing?</li>
+<li>How many dimensions of data are we showing?</li>
+<li>Are we comparing values? Or is this a distribution of values? Or are
+we showing a relationship?</li>
+</ul>
+<p>Different types of plots are better for different purposes:</p>
+<ul>
+<li>Scatter plots are good for showing relationships between two
+variables</li>
+<li>Line plots are good for showing trends over time</li>
+<li>Bar plots are good for comparing values across categories</li>
+<li>Histograms are good for showing the distribution of a single
+variable</li>
+<li>Box plots are good for showing the distribution of a single variable
+and comparing it across categories</li>
+<li>Heatmaps are good for showing the relationship between two variables
+across a grid of values</li>
+</ul></section><section><h2 class="section-heading" id="principles-of-effective-visualization">Principles of Effective Visualization<a class="anchor" aria-label="anchor" href="#principles-of-effective-visualization"></a>
+</h2>
+<hr class="half-width">
+<p>Rougier et. al. have a great paper on <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833" class="external-link">Ten
+Simple Rules for Better Figures</a> that goes into more detail on how to
+make effective visualizations. their ten rules are:</p>
+<ol style="list-style-type: decimal">
+<li>Know Your Audience</li>
+<li>Identify Your Message</li>
+<li>Adapt the Figure to the Support Medium</li>
+<li>Captions Are Not Optional</li>
+<li>Do Not Trust the Defaults</li>
+<li>Use Color Effectively</li>
+<li>Do Not Mislead the Reader</li>
+<li>Avoid “Chartjunk”</li>
+<li>Message Trumps Beauty</li>
+<li>Get the Right Tool</li>
+</ol>
+<div id="challenge-1-reviewing-a-visualization" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-1-reviewing-a-visualization" class="callout-inner">
+<h3 class="callout-title">Challenge 1: Reviewing a Visualization</h3>
+<div class="callout-content">
+<p>Take a look at the following visualizations. What works well? Is
+there any information that isn’t clearly conveyed? What would you change
+to make the visualization more effective?</p>
+<figure><img src=".././fig/07-making-visuals/viz-review-1.PNG" alt="Visualization 1 for review" class="figure mx-auto d-block"><div class="figcaption">Visualization 1</div>
+</figure><figure><img src=".././fig/07-making-visuals/viz-review-2.PNG" alt="Visualization 2 for review" class="figure mx-auto d-block"><div class="figcaption">Visualization 2</div>
+</figure><figure><img src=".././fig/07-making-visuals/viz-review-3.PNG" alt="Visualization 3 for review" class="figure mx-auto d-block"><div class="figcaption">Visualization 3</div>
+</figure><p>(Source for Visualization 3: <a href="https://www.visualcapitalist.com/ranked-europes-top-economies-in-2026-by-projected-gdp/" class="external-link">Visual
+Capitalist</a>)</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+
+</div>
+</div>
+</div>
+</div>
+<div id="challenge-2-selecting-a-plot-type" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-2-selecting-a-plot-type" class="callout-inner">
+<h3 class="callout-title">Challenge 2: Selecting a Plot Type</h3>
+<div class="callout-content">
+<p>You have a dataset with the following columns: -
+<code>sample_id</code>: A unique identifier for each sample -
+<code>group</code>: A categorical variable indicating the group that
+each sample belongs to (e.g. “control” or “treatment”) -
+<code>value A</code>: A numerical variable representing some continuous
+measurement for each sample - <code>value B</code>: Another numerical
+variable representing a different continuous measurement for each sample
+- <code>time</code>: A numerical variable representing the time at which
+each measurement was taken</p>
+<p>For each of the following questions, select the most appropriate plot
+type to visualize the data:</p>
+<ol style="list-style-type: decimal">
+<li>How does <code>value A</code> differ between the control and
+treatment groups?</li>
+<li>How does <code>value B</code> change over time for each sample?</li>
+<li>What is the distribution of <code>value A</code> across all
+samples?</li>
+<li>Is there a relationship between <code>value A</code> and
+<code>value B</code>?</li>
+</ol>
+<p>Explore the <a href="https://plotly.com/python/" class="external-link">Plotly
+Documentation</a> for ideas.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div class="accordion-body">
+<p>There are no hard and fast rules for which plot type to use, but here
+are some thoughts:</p>
+<ol style="list-style-type: decimal">
+<li>Since we’re comparing two groups (control and treatment) for a
+single numerical variable (<code>value A</code>), a box plot or a bar
+plot with error bars would be appropriate to show the differences
+between the groups. Other options could include histograms or density
+plots, where each group is shown in a different color.</li>
+</ol>
+<figure><img src=".././fig/07-making-visuals/example-idea-1.PNG" alt="Box plot comparing value A between control and treatment groups" class="figure mx-auto d-block"><div class="figcaption">Box plot comparing value A between control and
+treatment groups</div>
+</figure><ol style="list-style-type: decimal">
+<li>Time series data is typically visualized with a line plot, where the
+x-axis represents time and the y-axis represents the value of
+<code>value B</code>. We could also try a bar plot if we think there’s
+some value to “binning” the time variable into discrete intervals.</li>
+</ol>
+<figure><img src=".././fig/07-making-visuals/example-idea-2.PNG" alt="Line plot showing value B over time for each sample" class="figure mx-auto d-block"><div class="figcaption">Line plot showing value B over time for each
+sample</div>
+</figure><ol start="2" style="list-style-type: decimal">
+<li>To show the distribution of <code>value A</code> across all samples,
+a histogram or a density plot would be appropriate. A box plot could
+also be used to show the distribution and identify any outliers.</li>
+</ol>
+<figure><img src=".././fig/07-making-visuals/example-idea-3.PNG" alt="Histogram showing the distribution of value A across all samples" class="figure mx-auto d-block"><div class="figcaption">Histogram showing the distribution of value A
+across all samples</div>
+</figure><ol start="3" style="list-style-type: decimal">
+<li>To show the relationship between <code>value A</code> and
+<code>value B</code>, a scatter plot would be appropriate, where each
+point represents a sample, the x-axis represents <code>value A</code>,
+and the y-axis represents <code>value B</code>. We could also add a
+trend line to the scatter plot to help visualize any correlation between
+the two variables.</li>
+</ol>
+<figure><img src=".././fig/07-making-visuals/example-idea-4.PNG" alt="Scatter plot showing the relationship between value A and value B" class="figure mx-auto d-block"><div class="figcaption">Scatter plot showing the relationship between
+value A and value B</div>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<span class="callout-header">Key Points</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul><li>
+</li></ul>
+</div>
+</div>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</section></section><section id="aio-08-working-with-plotly"><p>Content from <a href="08-working-with-plotly.html">Working with Plotly</a></p>
+<hr>
+<p>Last updated on 2026-06-10 |
+
+        <a href="https://github.com/dkz2r/streamlit-and-api/edit/main/episodes/08-working-with-plotly.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul><li>
+</li></ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ul><li>
+</li></ul>
+</div>
+</div>
+</div>
+</div>
+</div>
 <section><h2 class="section-heading" id="making-plots-with-plotly">Making Plots with Plotly<a class="anchor" aria-label="anchor" href="#making-plots-with-plotly"></a>
 </h2>
 <hr class="half-width">
@@ -2606,7 +2982,126 @@ the current weather data and the daily weather data, but we can also
 retrieve the hourly weather data. On our sketch we had a kind of plot
 that we imagined, where there were two lines showing the temperature and
 apparent temperature over time, and a bar in the background with the
-precipitation levels. Let’s</p>
+precipitation levels. Let’s start with just one line, or “trace” in
+Plotly terms, showing the temperature over time.</p>
+<p>To begin, we will need to retrieve the hourly weather data from the
+API. We can do this similarly to how we retrieved the current weather
+data and the daily weather data:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1" aria-label="code-block-1-1"></a>parameters_to_request <span class="op">=</span> [</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1" aria-label="code-block-1-2"></a>    <span class="st">"temperature_2m"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1" aria-label="code-block-1-3"></a>]</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1" aria-label="code-block-1-4"></a>params <span class="op">=</span> {</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1" aria-label="code-block-1-5"></a>    <span class="st">"latitude"</span>: latitude,</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1" aria-label="code-block-1-6"></a>    <span class="st">"longitude"</span>: longitude,</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1" aria-label="code-block-1-7"></a>    <span class="st">"hourly"</span>: <span class="st">","</span>.join(parameters_to_request),</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1" aria-label="code-block-1-8"></a>    <span class="st">"forecast_days"</span>: <span class="dv">1</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1" aria-label="code-block-1-9"></a>}</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1" aria-label="code-block-1-10"></a></span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1" aria-label="code-block-1-11"></a>response <span class="op">=</span> requests.get(API_URL, params<span class="op">=</span>params)</span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1" aria-label="code-block-1-12"></a>hourly_data_json <span class="op">=</span> response.json()</span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1" aria-label="code-block-1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1" aria-label="code-block-1-14"></a>st.write(hourly_data_json)</span></code></pre>
+</div>
+<div class="section level3">
+<h3 id="json-to-dataframe">JSON to DataFrame<a class="anchor" aria-label="anchor" href="#json-to-dataframe"></a>
+</h3>
+<p>A few episodes ago we saw that we could print very nice dataframes to
+our application. However, the data that we get back from the API is in
+JSON format, which python has interpreted as a dictionary. It looks like
+we get a key in our response called <code>hourly</code>, which contains
+an entry for each of the parameters we requested, where each value is a
+list of values for each hour. Lucky us! This is one of the formats we
+can use to easily create a dataframe! Let’s replace our
+<code>st.write(hourly_data_json)</code> with the following code to
+create a dataframe from our JSON response:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1" aria-label="code-block-2-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1" aria-label="code-block-2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1" aria-label="code-block-2-3"></a>... <span class="co"># existing code</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1" aria-label="code-block-2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1" aria-label="code-block-2-5"></a>hourly_df <span class="op">=</span> pd.DataFrame(hourly_data_json[<span class="st">"hourly"</span>])</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1" aria-label="code-block-2-6"></a>st.dataframe(hourly_df)</span></code></pre>
+</div>
+</div>
+<div class="section level3">
+<h3 id="creating-a-plotly-line-chart">Creating a Plotly Line Chart<a class="anchor" aria-label="anchor" href="#creating-a-plotly-line-chart"></a>
+</h3>
+<p>Now that we have our data in a dataframe, we can create a line chart
+using Plotly. We can do this using the <code>px.line</code> function
+from the Plotly Express module. This function takes in a dataframe and
+the names of the columns to use for the x and y axes, and returns a
+Plotly figure object that we can display in our Streamlit app:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1" aria-label="code-block-3-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1" aria-label="code-block-3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1" aria-label="code-block-3-3"></a>... <span class="co"># existing code</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1" aria-label="code-block-3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1" aria-label="code-block-3-5"></a>fig <span class="op">=</span> px.line(hourly_df, x<span class="op">=</span><span class="st">"time"</span>, y<span class="op">=</span><span class="st">"temperature_2m"</span>, title<span class="op">=</span><span class="st">"Temperature over Time"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1" aria-label="code-block-3-6"></a>st.plotly_chart(fig)</span></code></pre>
+</div>
+<figure><img src=".././fig/07-making-visuals/simple-line-plot.PNG" alt="Basic line plot showing temperature over time" class="figure mx-auto d-block"><div class="figcaption">Temperature over Time</div>
+</figure><p>Eh, it works to show the data, but we want to tidy things up a bit. A
+couple things we notice right away:</p>
+<ul>
+<li>The x and y axis labels seem to come right from the dataframe column
+names</li>
+<li>Hovering over the plot gives us a tooltip, but it’s not very
+readable</li>
+<li>A legend might be nice to have for when we add more traces to the
+plot later</li>
+</ul>
+</div>
+<div class="section level3">
+<h3 id="customizing-the-plot">Customizing the Plot<a class="anchor" aria-label="anchor" href="#customizing-the-plot"></a>
+</h3>
+<p>We won’t go too deep into the Plotly API in this workshop, but let’s
+see how we can quickly make some changes to our plot. First, we can
+change the axis labels by passing in a <code>labels</code> dictionary to
+the <code>px.line</code> function:</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1" aria-label="code-block-4-1"></a>fig <span class="op">=</span> px.line(</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1" aria-label="code-block-4-2"></a>    hourly_df,</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1" aria-label="code-block-4-3"></a>    x<span class="op">=</span><span class="st">"time"</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1" aria-label="code-block-4-4"></a>    y<span class="op">=</span><span class="st">"temperature_2m"</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1" aria-label="code-block-4-5"></a>    title<span class="op">=</span><span class="st">"Temperature over Time"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1" aria-label="code-block-4-6"></a>    labels<span class="op">=</span>{</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1" aria-label="code-block-4-7"></a>        <span class="st">"time"</span>: <span class="st">"Time"</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1" aria-label="code-block-4-8"></a>        <span class="st">"temperature_2m"</span>: <span class="st">"Temperature (°C)"</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1" aria-label="code-block-4-9"></a>    },</span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1" aria-label="code-block-4-10"></a>)</span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1" aria-label="code-block-4-11"></a>st.plotly_chart(fig)</span></code></pre>
+</div>
+<p>Next, we can customize the tooltip by passing in a
+<code>hover_data</code> dictionary to the <code>px.line</code>
+function:</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1" aria-label="code-block-5-1"></a>fig <span class="op">=</span> px.line(</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1" aria-label="code-block-5-2"></a>    hourly_df,</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1" aria-label="code-block-5-3"></a>    x<span class="op">=</span><span class="st">"time"</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1" aria-label="code-block-5-4"></a>    y<span class="op">=</span><span class="st">"temperature_2m"</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1" aria-label="code-block-5-5"></a>    title<span class="op">=</span><span class="st">"Temperature over Time"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1" aria-label="code-block-5-6"></a>    labels<span class="op">=</span>{</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1" aria-label="code-block-5-7"></a>        <span class="st">"time"</span>: <span class="st">"Time"</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1" aria-label="code-block-5-8"></a>        <span class="st">"temperature_2m"</span>: <span class="st">"Temperature (°C)"</span>,</span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1" aria-label="code-block-5-9"></a>    },</span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1" aria-label="code-block-5-10"></a>    hover_data<span class="op">=</span>{</span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1" aria-label="code-block-5-11"></a>        <span class="st">"time"</span>: <span class="st">"|%H:%M"</span>,  <span class="co"># Format the time as hours and minutes</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1" aria-label="code-block-5-12"></a>        <span class="st">"temperature_2m"</span>: <span class="st">":.1f"</span>,  <span class="co"># Format the temperature to one decimal place</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1" aria-label="code-block-5-13"></a>    },</span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1" aria-label="code-block-5-14"></a>)</span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1" aria-label="code-block-5-15"></a>st.plotly_chart(fig)</span></code></pre>
+</div>
 <div id="challenge-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -2647,6 +3142,7 @@ precipitation levels. Let’s</p>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div>
 </section></section>
 </div>
     </main>
