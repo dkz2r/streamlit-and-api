@@ -6,13 +6,17 @@ exercises: 2 # exercise time in minutes
 
 :::::::::::::::::::::::::::::::::::::: questions
 
--
+- How can we create an interesting, interactive plot in Streamlit using Plotly?
+- How can we customize our plot to make it more informative and visually appealing?
+- How can we combine different plot types in the same plot to show different aspects of our data?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
--
+- Create a line plot using the API data and customize the appearance of the plot
+- Convert data from wide to long format to make it easier to plot with Plotly
+- Add a secondary y-axis to our plot to show different types of data
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -182,8 +186,24 @@ params = {
 We could just add another trace to our plot with another call to `px.line`, but let's be a little
 more efficient. Plotly really prefers data that is in the "long" format, where each row is a single
 observation and there are columns for the x and y values, and a column that indicates which trace
-the observation belongs to. This might be a little frustrating, but fortunately, pandas has a built
-in function to convert our data from the "wide" format that we have:
+the observation belongs to.
+
+For a visual example, here is what our data looks like now, and what it would look like in long
+format below:
+
+![Wide vs Long Format](./fig/08-working-with-plotly/long_vs_wide_data.png){alt="Example of wide vs long format data"}
+
+This might need some tricky data manipulation to get the way we want it, but luckily pandas has a
+built in function called `melt` that can do exactly this! Melt is a method that can be called on
+a dataframe and takes three main arguments:
+
+- `id_vars`: A list of columns to keep as is (in our case, this would be the "time" column)
+- `var_name`: The name of the new column that will contain the names of the original columns (in
+    our case, "parameter")
+- `value_name`: The name of the new column that will contain the values from the original columns
+    (in our case, "value")
+
+Implementing this in our code looks like this:
 
 ```python
 hourly_df = pd.DataFrame(hourly_data_json["hourly"])
@@ -194,7 +214,8 @@ hourly_df_long = hourly_df.melt(id_vars=["time"], var_name="parameter", value_na
 st.dataframe(hourly_df_long)
 ```
 
-And then we can use the new long data in our plot and see that we get two lines, one for each parameter:
+And then we can use the new long data in our plot and see that we get two lines, one for each
+parameter:
 
 ```python
 hourly_data_json = response.json()
@@ -223,15 +244,33 @@ fig = px.line(
 )
 
 fig.update_traces(textposition="top center", marker={"size": 5}, textfont={"size": 10})
+st.plotly_chart(fig)
 ```
+
+::: callout
+
+### fig.update_traces
+
+We're using the update traces method here to update the properties of all the traces in the plot
+together at the same time. This is a convienient way to make changes without having to set it in
+each trace individually. It also gives us access to several properties that we can't set in the
+`px.line` function, such as the position of the text labels and the size of the markers.
+
+:::
 
 ## Color Selection
 
 Think back to the last episode where we talked about color selection for our plots. This plot
 contains two traces, one for the temperature and one for the apparent temperature. In my opinion,
 it would be nice to have the temperature trace in a bright color, and the apparent temperature in a
-more muted color, since the temperature is the main focus of our plot. We can easily change the
-colors of our traces by passing in a `color_discrete_map` dictionary to the `px.line` function:
+more muted color, since the temperature is the main focus of our plot. Thinking forward, I would
+also like to have the precipitation bars in a light blue color, since that's reminiscent of water
+and will help to visually distinguish it from the temperature lines. Having everything in different
+shades of blue might be a little too much though, so I think I'll go with a light grey for the
+apparent temperature.
+
+We can easily change the colors of our traces by passing in a `color_discrete_map` dictionary to
+the `px.line` function:
 
 ```python
 fig = px.line(
@@ -256,7 +295,7 @@ fig = px.line(
     },
 )
 fig.update_traces(textposition="top center", marker={"size": 5}, textfont={"size": 10})
-```
+st.plotly_chart(fig)
 
 At this point, the text labels are looking a little messy. Remember to "avoid chartjunk"! I think
 the plot is pretty clear without the text labels, so let's remove those:
@@ -284,7 +323,22 @@ fig = px.line(
     },
 )
 fig.update_traces(textposition="top center", marker={"size": 5}, textfont={"size": 10})
+st.plotly_chart(fig)
 ```
+
+::: callout
+
+### Color Maps
+
+Plotly comes with a number of built in color maps that we can use to quickly set the colors of our
+traces. You can find a list of the built in color maps in the Plotly documentation here:
+https://plotly.com/python/discrete-color/#color-sequences-in-plotly-express
+
+:::
+
+Here's what our plot looks like now:
+
+![Customized line plot showing temperature and apparent temperature over time](./fig/08-working-with-plotly/line-plot-with-multiple-traces.PNG){alt="Customized line plot showing temperature and apparent temperature over time"}
 
 ## What is the question we are answering?
 
@@ -371,6 +425,10 @@ Ok! I think that's looking pretty good so far:
 
 ![Line plot with current time and sunrise/sunset annotations](./fig/08-working-with-plotly/line-plot-with-shaded-areas.PNG){alt="Line plot with current time and sunrise/sunset annotations"}
 
+Adding in the sunrise and sunset times gives additional context to our plot and removes the need for
+the two metric boxes we have above the plot that show the sunrise and sunset times, since that
+information is now included in our visual.
+
 ## Mixing plot types
 
 We also had the idea to add bars for precipitation levels in the background of our plot. Let's start
@@ -403,10 +461,28 @@ fig = px.line(
 precipitation_data = hourly_df_long[hourly_df_long["parameter"] == "precipitation"]
 ```
 
+::: callout
+
+plotly.express vs plotly.graph_objects
+
+Plotly has two main interfaces for creating plots: the "express" interface, which is a high level
+interface that allows you to create plots with a single function call, and the "graph_objects"
+interface, which is a lower level interface that gives you more control over the details of your
+plot. In this example, we are using the express interface to create our line plot, and then using
+the graph_objects interface to add a bar trace for our precipitation data and to customize the
+layout of our plot.
+
+:::
+
+
 Next we want to create a new trace for our precipitation data, but we want it to be a bar trace
 instead of a line trace:
 
 ```python
+import plotly.graph_objects as go # Add this import at the top of the file
+
+... # existing code
+
 fig.add_trace(
     go.Bar(
         x=precipitation_data["time"],
@@ -437,57 +513,53 @@ fig.update_layout(
     legend_title_text="Parameter",
 )
 ```
-
-::: callout
-
-plotly.express vs plotly.graph_objects
-
-Plotly has two main interfaces for creating plots: the "express" interface, which is a high level
-interface that allows you to create plots with a single function call, and the "graph_objects"
-interface, which is a lower level interface that gives you more control over the details of your
-plot. In this example, we are using the express interface to create our line plot, and then using
-the graph_objects interface to add a bar trace for our precipitation data and to customize the
-layout of our plot.
-
-:::
-
 ## Deep Breath
 
-Phew! That's a lot of code. Here's the full code for our plot so far:
+Phew! That's a lot of code. Here's the full code for our plot so far, complete with additional
+comments to explain each step:
 
 ```python
+# --- 1. Fetch hourly data from the API ---
+# Request all three parameters we need in one API call
 parameters_to_request = ["temperature_2m", "apparent_temperature", "precipitation"]
 params = {
     "latitude": latitude,
     "longitude": longitude,
-    "hourly": ",".join(parameters_to_request),
+    "hourly": ",".join(parameters_to_request),  # Join the list into a comma-separated string for the API
     "forecast_days": 1,
 }
 
 response = requests.get(API_URL, params=params)
 hourly_data_json = response.json()
 
+# --- 2. Shape the data ---
+# The API returns a dict like {"time": [...], "temperature_2m": [...], ...}
+# pd.DataFrame can turn that directly into a wide-format dataframe
 hourly_df = pd.DataFrame(hourly_data_json["hourly"])
 
-# Melt the dataframe to convert it from wide to long format
+# Melt from wide to long format so Plotly can use a single "parameter" column
+# to assign one line color per variable (time stays as the shared x-axis column)
 hourly_df_long = hourly_df.melt(id_vars=["time"], var_name="parameter", value_name="value")
 
-# Limit the temperature data to the two parameters we are interested in
+# Keep only the two temperature parameters for the line traces;
+# precipitation will be handled separately as a bar trace
 temperature_data = hourly_df_long[
     hourly_df_long["parameter"].isin(["temperature_2m", "apparent_temperature"])
 ]
 
-# Rename the columns for better readability in the plot
+# Replace the raw API parameter names with human-readable labels
+# (these must match the keys used in color_discrete_map below)
 temperature_data["parameter"] = temperature_data["parameter"].replace(
     {"temperature_2m": "Temperature (°C)", "apparent_temperature": "Apparent Temperature (°C)"}
 )
 
+# --- 3. Build the base line plot (Plotly Express) ---
 fig = px.line(
     temperature_data,
     x="time",
     y="value",
-    color="parameter",
-    # text="value",
+    color="parameter",       # One line per unique value in the "parameter" column
+    # text="value",          # Uncomment to show value labels on each point
     title="Temperature and Precipitation for the next 24 hours",
     labels={
         "time": "Time",
@@ -495,63 +567,69 @@ fig = px.line(
         "parameter": "Parameter",
     },
     hover_data={
-        "time": "|%H:%M",  # Format the time as hours and minutes
-        "value": ":.1f",  # Format the temperature to one decimal place
+        "time": "|%H:%M",    # Format the time as hours and minutes in the tooltip
+        "value": ":.1f",     # Format the temperature to one decimal place
     },
     color_discrete_map={
-        "Temperature (°C)": "blue",
-        "Apparent Temperature (°C)": "lightgrey",
+        "Temperature (°C)": "blue",          # Primary focus — bright color
+        "Apparent Temperature (°C)": "lightgrey",  # Secondary — muted so it doesn't compete
     },
 )
 
-# Add precipitation as a bar trace
+# --- 4. Add precipitation as a bar trace (Plotly Graph Objects) ---
+# Isolate the precipitation rows from the long-format dataframe
 precipitation_data = hourly_df_long[hourly_df_long["parameter"] == "precipitation"]
+
+# go.Bar lets us assign this trace to a second y-axis ("y2"),
+# which is not possible through the px.line interface alone
 fig.add_trace(
     go.Bar(
         x=precipitation_data["time"],
         y=precipitation_data["value"],
         name="Precipitation",
-        yaxis="y2",  # Assign to secondary y-axis
+        yaxis="y2",           # Tell Plotly to use the secondary y-axis for this trace
         marker_color="lightblue",
         hovertemplate="Time: %{x}<br>Precipitation: %{y:.1f} mm<extra></extra>",
     )
 )
 
-
+# --- 5. Mark the current time ---
+# Format must match the time strings in the dataframe so Plotly places it correctly on the x-axis
 current_time = datetime.now().strftime("%Y-%m-%dT%H:%M")
 fig.add_vline(x=current_time, line_dash="dash", line_color="lightpink")
 fig.add_annotation(
     x=current_time,
-    y=temperature_data["value"].max(),
+    y=temperature_data["value"].max(),  # Anchor the label at the top of the plot
     text="Now",
-    showarrow=False,  # Don't show an arrow pointing to the line
-    textangle=90,  # Rotate the text to be vertical
-    xshift=-5,  # Shift the text slightly to the left of the line
+    showarrow=False,   # No arrow — the vertical line itself is the pointer
+    textangle=90,      # Rotate text to run vertically alongside the line
+    xshift=-5,         # Nudge left so the label doesn't overlap the line
 )
 
-# Add a shaded regions to indicate nighttime hours
+# --- 6. Shade nighttime hours before sunrise and after sunset ---
+# Parse the sunrise/sunset strings (from the daily API response) into datetime objects
 sunrise_time = datetime.strptime(daily_sunrise, "%Y-%m-%dT%H:%M")
 fig.add_vrect(
-    x0=hourly_df["time"].min(),
-    x1=sunrise_time,
+    x0=hourly_df["time"].min(),  # Start of the day (midnight)
+    x1=sunrise_time,             # End of the pre-sunrise region
     fillcolor="lightsteelblue",
     opacity=0.3,
-    layer="below",
-    line_width=0,
+    layer="below",   # Draw behind the traces so the lines remain visible
+    line_width=0,    # No border on the shaded region
 )
 fig.add_annotation(
     x=sunrise_time,
-    y=hourly_df_long["value"].min(),  # Position the annotation at the bottom of the plot
+    y=hourly_df_long["value"].min(),  # Anchor label at the bottom of the plot
     text=f"Sunrise ({sunrise_time.strftime('%H:%M')})",
-    showarrow=False,  # Don't show an arrow pointing to the line
-    textangle=90,  # Rotate the text to be vertical
-    xshift=-5,  # Shift the text slightly to the left of the line
+    showarrow=False,
+    textangle=90,
+    xshift=-5,  # Place label just to the left of the sunrise boundary
 )
 
 sunset_time = datetime.strptime(daily_sunset, "%Y-%m-%dT%H:%M")
 fig.add_vrect(
-    x0=sunset_time,
-    x1=hourly_df["time"].max(),
+    x0=sunset_time,              # Start of the post-sunset region
+    x1=hourly_df["time"].max(),  # End of the day (midnight)
     fillcolor="lightsteelblue",
     opacity=0.3,
     layer="below",
@@ -559,14 +637,16 @@ fig.add_vrect(
 )
 fig.add_annotation(
     x=sunset_time,
-    y=hourly_df_long["value"].min(),  # Position the annotation at the bottom of the plot
+    y=hourly_df_long["value"].min(),
     text=f"Sunset ({sunset_time.strftime('%H:%M')})",
-    showarrow=False,  # Don't show an arrow pointing to the line
-    textangle=90,  # Rotate the text to be vertical
-    xshift=5,  # Shift the text slightly to the left of the line
+    showarrow=False,
+    textangle=90,
+    xshift=5,  # Place label just to the right of the sunset boundary
 )
 
-# Update layout to accommodate both y-axes
+# --- 7. Configure both y-axes ---
+# Because we used go.Bar with yaxis="y2", we need to explicitly define that axis here.
+# "overlaying": "y" means y2 shares the same plot area as the primary y-axis.
 fig.update_layout(
     yaxis={
         "title": "Temperature (°C)",
@@ -574,13 +654,13 @@ fig.update_layout(
     },
     yaxis2={
         "title": "Precipitation (mm)",
-        "overlaying": "y",
+        "overlaying": "y",   # Share the same x-axis / plot area as the primary y-axis
         "side": "right",
-        "showgrid": False,
+        "showgrid": False,   # Hide y2 gridlines to avoid visual clutter
         "range": [
             0,
-            max(5, precipitation_data["value"].max() * 1.2),
-        ],  # Minimum max of 5mm or 20% above actual max
+            max(5, precipitation_data["value"].max() * 1.2),  # Minimum max of 5mm or 20% above actual max
+        ],
     },
     legend_title_text="Parameter",
 )
@@ -630,6 +710,59 @@ fig.update_layout(
     },
     legend_title_text="Parameter",
 )
+```
+
+:::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Challenge 2: Input Element to Select "Forcast Days"
+
+In the parameters for our API call, we have a parameter called `forecast_days` that allows us to
+specify how many days of forecast data we want to retrieve. Currently, we have this set to 1, which
+means we are only getting data for the current day. Try adding a Streamlit input element that
+allows the user to select how many days of forecast data they want to see, and then update the
+API call and the plot accordingly.
+
+Check the API documentation! There are limitations to this value!
+
+Note that you will need to comment out the code that adds the shaded regions for sunrise and sunset,
+or add either some conditional logic to only add those shaded regions when `forecast_days` is 1, or
+add shaded regions for the sunrise and sunset times for each day that is included in the forecast.
+
+::: hint
+
+Use a `st.number_input` or a `st.selectbox` to allow the user to select a number of days. Be sure
+that the user can't select a number greater than 16 or less than 1.
+
+:::
+
+:::::::::::::::::::::::: solution
+
+You can add either a `st.number_input` or a `st.selectbox` to allow the user to select the number
+of forecast days. Here's how you can do it with a `st.number_input`:
+
+```python
+forecast_days = st.number_input("Forecast Days", min_value=1, max_value=16, value=1)
+```
+
+or with a `st.selectbox`:
+
+```python
+forecast_days = st.selectbox("Forecast Days", options=[1, 2, 3, 4, 5, 6, 7], index=0)
+```
+
+Then, you can use the `forecast_days` variable in your API call parameters:
+
+```python
+params = {
+    "latitude": latitude,
+    "longitude": longitude,
+    "hourly": ",".join(parameters_to_request),
+    "forecast_days": forecast_days,  # Use the user-selected value here
+}
 ```
 
 :::::::::::::::::::::::::::::::::

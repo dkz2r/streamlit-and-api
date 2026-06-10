@@ -124,13 +124,13 @@ highest and lowest performing stores.
 
 Color is one of the most powerful pre-attentive attributes, drawing attention to certain elements
 in a plot and helping to distinguish between different elements. We can use color as a
-pre-attentive atribute - for example, using red/blue to indicate temperatures.
+pre-attentive attribute - for example, using red/blue to indicate temperatures.
 
 Typically, when making plots, we have a few different types of color schemes to choose from:
 
 - Qualitative: These are color schemes that are designed to distinguish between different
     categories of data. They typically use a variety of colors that are easily distinguishable
-    from each other. There is no inherint order to the colors.
+    from each other. There is no inherit order to the colors.
 - Sequential: These are color schemes that are designed to show a progression of values. They
     typically use a a single color that varies in intensity, with lighter colors representing lower
     values and darker colors representing higher values.

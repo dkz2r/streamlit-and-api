@@ -322,7 +322,7 @@ col_temperature, col_icon, col_wind = st.columns(3)
 with col_temperature:
     st.metric(label="Current Temperature", value=current_temperature, format="%.1f °C", border=True)
 with col_icon:
-    st.metric(label="Current Conditions", value=weather_code_mapping.get(current_weather_code, "Unknown"), border=True)
+    st.metric(label="Current Conditions", value=current_weather_code, border=True)
 with col_wind:
     st.metric(label="Current Wind", value="", border=True)
 ```
