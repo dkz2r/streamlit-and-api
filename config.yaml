@@ -69,9 +69,12 @@ contact: 'hartman@itc.rwth-aachen.de' # FIXME
 episodes:
 - 01-uv-and-the-environment.md
 - 02-introduction-to-streamlit.md
-- 03-getting-data-from-an-api.md
-- 04-secrets-and-apis.md
-- 05-building-additional-apps.md
+- 03-layout-widgets-sidebar.md
+- 04-designing-our-application.md
+- 05-getting-data-from-an-api.md
+- 06-building-our-app.md
+- 07-making-visuals.md
+
 
 # Information for Learners
 learners:

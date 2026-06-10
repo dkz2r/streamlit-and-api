@@ -119,7 +119,6 @@ to include some markdown:
 
 ```python
 import streamlit as st
-import pandas as pd
 
 st.title("Hello, Streamlit!")
 
@@ -154,7 +153,7 @@ collapse it.
 ![](fig/02-introduction-to-streamlit/streamlit-write-list.png){alt="Streamlit List Display"}
 
 Let's try passing a different data object to `st.write`. Let's make a simple pandas DataFrame and
-pass that to `st.write`:
+pass that to `st.write` (We'll need to make sure to import pandas at the top of our script as well):
 
 ```python
 import streamlit as st
@@ -200,84 +199,9 @@ them in the app.
 
 :::
 
-## Widgets
 
-We can add a variety of interactive widgets to our app. Try the following:
 
-```python
-import streamlit as st
-import pandas as pd
 
-st.title("Hello, Streamlit!")
-st.write("This is a simple Streamlit app. What happens when we change this text?")
-st.subheader("This is a subheader. You can add more sections to your app.")
-
-st.markdown(
-    """
-    We can write markdown to format our text, like this:
-
-    - This is a bullet point
-    - This is another bullet point
-
-    We can also write **bold** text or *italic* text.
-    """
-)
-
-if st.checkbox("Show Fruit DataFrame"):
-    my_dataframe = pd.DataFrame(
-        {"Fruit": ["Apple", "Banana", "Coconut"], "Quantity": [5, 1, 6], "Cost": [0.5, 10.00, 1.0]}
-    )
-    st.write(my_dataframe)
-
-my_value = st.slider("Select a value", 0, 100, 50)
-st.write(f"You selected: {my_value}")
-```
-
-## Layout
-
-Finally, we can control the layout of our app using the built-in layout functions. Let's use the
-`st.columns` function to create a two-column layout:
-
-```python
-import streamlit as st
-import pandas as pd
-
-st.title("Hello, Streamlit!")
-st.write("This is a simple Streamlit app. What happens when we change this text?")
-st.subheader("This is a subheader. You can add more sections to your app.")
-
-st.markdown(
-    """
-    We can write markdown to format our text, like this:
-
-    - This is a bullet point
-    - This is another bullet point
-
-    We can also write **bold** text or *italic* text.
-    """
-)
-
-if st.checkbox("Show Fruit DataFrame"):
-    my_dataframe = pd.DataFrame(
-        {"Fruit": ["Apple", "Banana", "Coconut"], "Quantity": [5, 1, 6], "Cost": [0.5, 10.00, 1.0]}
-    )
-    st.write(my_dataframe)
-
-my_value = st.slider("Select a value", 0, 100, 50)
-st.write(f"You selected: {my_value}")
-
-left_column, right_column = st.columns(2)
-with left_column:
-    st.header("This is the left column")
-    st.write("We can put any content we want in this column.")
-with right_column:
-    st.header("This is the right column")
-    st.write("We can put any content we want in this column as well.")
-```
-
-Our app at this point should look something like this:
-
-![](fig/02-introduction-to-streamlit/streamlit-widgets.png){alt="Streamlit Widgets and Layout"}
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
