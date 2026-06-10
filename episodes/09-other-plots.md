@@ -101,7 +101,7 @@ wind_df["direction_label"] = [compass_labels[i] for i in bin_indices]
 
 And add a `st.dataframe(wind_df)` to check that everything looks correct:
 
-![Wind Dataframe with Direction Labels](./fig/09-other-plots/wind-rose-directional-data.PNG){alt="Wind Dataframe with Direction Labels"}
+![Wind Dataframe with Direction Labels](./fig/09-other-plots/wind-rose-directional-data.PNG.jpg){alt="Wind Dataframe with Direction Labels"}
 
 
 Next, we want to do the same thing for the wind speed. This time, we'll use a pandas functon called
@@ -116,7 +116,7 @@ wind_df["speed_category"] = pd.cut(wind_df["wind_speed_10m"], bins=speed_bins, l
 
 Again, we can check that everything looks correct by displaying the dataframe:
 
-![Wind Dataframe with Speed Categories](./fig/09-other-plots/wind-rose-speed-categories.PNG){alt="Wind Dataframe with Speed Categories"}
+![Wind Dataframe with Speed Categories](./fig/09-other-plots/wind-rose-speed-categories.PNG.jpg){alt="Wind Dataframe with Speed Categories"}
 
 ## Building the Plot
 
