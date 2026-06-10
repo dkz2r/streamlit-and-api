@@ -887,7 +887,7 @@ personalized greeting.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <p>Use the slider example as a reference.</p>
 </div>
@@ -899,7 +899,7 @@ personalized greeting.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -931,7 +931,7 @@ of your choice and some text.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -973,7 +973,7 @@ value.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1527,7 +1527,7 @@ application?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>Some possible ideas for our application could include:</p>
 <ul>
@@ -1567,7 +1567,7 @@ including to make this even more interactive?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <ul>
 <li>Instead of a 24 hour forecast, we could use a dropdown to allow the
@@ -1636,7 +1636,7 @@ as we go along.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 
 </div>
@@ -1912,15 +1912,105 @@ The weather data that we are interested in is nested inside the
 <span id="cb6-13"><a href="#cb6-13" tabindex="-1" aria-label="code-block-6-13"></a>daily_data <span class="op">=</span> data[<span class="st">"daily"</span>]</span>
 <span id="cb6-14"><a href="#cb6-14" tabindex="-1" aria-label="code-block-6-14"></a><span class="bu">print</span>(daily_data)</span></code></pre>
 </div>
-<div id="challenge-1" class="callout challenge">
+<div id="responsible-api-use" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="responsible-api-use" class="callout-inner">
+<h3 class="callout-title">Responsible API Use</h3>
+<div class="callout-content">
+<p>When using APIs, it’s important to be mindful of how we are using
+them. Many APIs have rate limits, which means that there is a limit to
+how many requests we can make in a certain time period. If we exceed
+these limits we might be temporarily or permanently blocked from using
+the API. Always check the documentation to see if there are restrictions
+on how you can use the API, and try to be respectful of these limits
+when building your applications.</p>
+</div>
+</div>
+</div>
+<div id="caching-api-responses" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="caching-api-responses" class="callout-inner">
+<h3 class="callout-title">Caching API responses</h3>
+<div class="callout-content">
+<p>A simple way to be more respectful of API rate limits is to cache the
+responses we get back from the API. This means that, before we submit a
+request, we first check our local machine to see if we have made this
+exact same request recently, and if so, we can just use the stored data
+instead.</p>
+<p>This can also speed up the application, since reading data from the
+local machine is usually much faster (computationally speaking) than
+waiting for a round trip data request to the API.</p>
+<p>The <code>requests</code> library has a built in way to do this with
+the <code>requests_cache</code> library, which you can install with
+<code>uv add requests_cache</code>. You can find the documentation for
+this library here: <a href="https://requests-cache.readthedocs.io/en/stable/" class="external-link uri">https://requests-cache.readthedocs.io/en/stable/</a>.</p>
+</div>
+</div>
+</div>
+<div id="challenge-1-use-the-open-meteo-api-to-geocode-a-city-name" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge 1:</h3>
+<div id="challenge-1-use-the-open-meteo-api-to-geocode-a-city-name" class="callout-inner">
+<h3 class="callout-title">Challenge 1: Use the Open Meteo API to Geocode
+a City Name</h3>
 <div class="callout-content">
-
+<p>The Open Meteo API has an endpoint for geocoding, which allows us to
+retrieve the latitude and longitude for a given city name. This would
+make it much easier for users to get the weather data for a location,
+since they wouldn’t have to look up the latitude and longitude
+themselves.</p>
+<p>You can find the documentation for the geocoding endpoint here: <a href="https://open-meteo.com/en/docs/geocoding-api" class="external-link uri">https://open-meteo.com/en/docs/geocoding-api</a>.</p>
+<ol style="list-style-type: decimal">
+<li>Start by adding a text input to your app where users can enter a
+city name.</li>
+<li>When the user hits “return” on the text input, make a request to the
+geocoding endpoint.</li>
+<li>Parse the response to extract the latitude and longitude for the
+city that the user entered.</li>
+<li>Populate the latitude and longitude number inputs in your app with
+the values you extracted from the geocoding API response.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="accordionHint1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
+  <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
+</button>
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div class="accordion-body">
+<p>Add the base URL to the top of your file as a constant to make it
+easier to work with:</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1" aria-label="code-block-7-1"></a>GEOCODING_API_URL <span class="op">=</span> <span class="st">"https://geocoding-api.open-meteo.com/v1/search"</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionHint2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint2" aria-expanded="false" aria-controls="collapseHint2">
+  <h4 class="accordion-header" id="headingHint2"> Give me a hint </h4>
+</button>
+<div id="collapseHint2" class="accordion-collapse collapse" aria-labelledby="headingHint2" data-bs-parent="#accordionHint2">
+<div class="accordion-body">
+<p>The geocoding endpoint returns a list of results, since there can be
+multiple cities with the same name. For simplicity, you can use the
+“count” parameter to limit the results to 1, so you only get one result
+back.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1929,9 +2019,106 @@ The weather data that we are interested in is nested inside the
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1" aria-label="code-block-8-1"></a>GEOCODING_API_URL <span class="op">=</span> <span class="st">"https://geocoding-api.open-meteo.com/v1/search"</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1" aria-label="code-block-8-2"></a></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1" aria-label="code-block-8-3"></a>... <span class="co"># existing code</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1" aria-label="code-block-8-4"></a></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1" aria-label="code-block-8-5"></a>city_name <span class="op">=</span> st.text_input(</span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1" aria-label="code-block-8-6"></a>    <span class="st">"Enter a location (e.g., city name or coordinates)"</span>, value<span class="op">=</span><span class="st">"Aachen, Germany"</span></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1" aria-label="code-block-8-7"></a>)</span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1" aria-label="code-block-8-8"></a></span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1" aria-label="code-block-8-9"></a>params <span class="op">=</span> {</span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1" aria-label="code-block-8-10"></a>    <span class="st">"name"</span>: city_name,</span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1" aria-label="code-block-8-11"></a>    <span class="st">"count"</span>: <span class="dv">1</span>,  <span class="co"># Limit to 1 result for simplicity</span></span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1" aria-label="code-block-8-12"></a>}</span>
+<span id="cb8-13"><a href="#cb8-13" tabindex="-1" aria-label="code-block-8-13"></a>response <span class="op">=</span> requests.get(GEOCODING_API_URL, params<span class="op">=</span>params)</span>
+<span id="cb8-14"><a href="#cb8-14" tabindex="-1" aria-label="code-block-8-14"></a>geocoding_data <span class="op">=</span> response.json()</span>
+<span id="cb8-15"><a href="#cb8-15" tabindex="-1" aria-label="code-block-8-15"></a></span>
+<span id="cb8-16"><a href="#cb8-16" tabindex="-1" aria-label="code-block-8-16"></a>latitude <span class="op">=</span> geocoding_data[<span class="st">"results"</span>][<span class="dv">0</span>][<span class="st">"latitude"</span>]</span>
+<span id="cb8-17"><a href="#cb8-17" tabindex="-1" aria-label="code-block-8-17"></a>longitude <span class="op">=</span> geocoding_data[<span class="st">"results"</span>][<span class="dv">0</span>][<span class="st">"longitude"</span>]</span>
+<span id="cb8-18"><a href="#cb8-18" tabindex="-1" aria-label="code-block-8-18"></a></span>
+<span id="cb8-19"><a href="#cb8-19" tabindex="-1" aria-label="code-block-8-19"></a>lat_lon_columns <span class="op">=</span> st.columns(<span class="dv">2</span>)</span>
+<span id="cb8-20"><a href="#cb8-20" tabindex="-1" aria-label="code-block-8-20"></a><span class="cf">with</span> lat_lon_columns[<span class="dv">0</span>]:</span>
+<span id="cb8-21"><a href="#cb8-21" tabindex="-1" aria-label="code-block-8-21"></a>    latitude <span class="op">=</span> st.number_input(<span class="st">"Latitude"</span>, min_value<span class="op">=-</span><span class="fl">90.0</span>, max_value<span class="op">=</span><span class="fl">90.0</span>, value<span class="op">=</span>latitude)</span>
+<span id="cb8-22"><a href="#cb8-22" tabindex="-1" aria-label="code-block-8-22"></a><span class="cf">with</span> lat_lon_columns[<span class="dv">1</span>]:</span>
+<span id="cb8-23"><a href="#cb8-23" tabindex="-1" aria-label="code-block-8-23"></a>    longitude <span class="op">=</span> st.number_input(<span class="st">"Longitude"</span>, min_value<span class="op">=-</span><span class="fl">180.0</span>, max_value<span class="op">=</span><span class="fl">180.0</span>, value<span class="op">=</span>longitude)</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="challenge-2-error-handling" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="challenge-2-error-handling" class="callout-inner">
+<h3 class="callout-title">Challenge 2: Error Handling</h3>
+<div class="callout-content">
+<p>At the moment, if we make a request to the goecoding API and it
+doesn’t return any results, we just get an ugly red error message in our
+app. See if you can add some error handling to the app to catch this
+error and prevent the later code from trying to run against missing or
+incorrect latitude and longitude values.</p>
+<p>Check the streamlit documentation to see if there are are any nice
+ways to display an error, and how to stop the execution of the app if we
+encounter an error.</p>
+</div>
+</div>
+</div>
+<div id="accordionHint3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint3" aria-expanded="false" aria-controls="collapseHint3">
+  <h4 class="accordion-header" id="headingHint3"> Give me a hint </h4>
+</button>
+<div id="collapseHint3" class="accordion-collapse collapse" aria-labelledby="headingHint3" data-bs-parent="#accordionHint3">
+<div class="accordion-body">
+<p>We still get a response back from the API even if there are no
+results, so we can just check the length of the “results” list in the
+response, and if it’s empty with
+<code>len(geocoding_data["results"]) == 0</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionHint4" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint4" aria-expanded="false" aria-controls="collapseHint4">
+  <h4 class="accordion-header" id="headingHint4"> Give me a hint </h4>
+</button>
+<div id="collapseHint4" class="accordion-collapse collapse" aria-labelledby="headingHint4" data-bs-parent="#accordionHint4">
+<div class="accordion-body">
+<p>Look for documentation on <code>st.error</code> to display an error
+message, and <code>st.stop</code> to stop the execution of the app.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1" aria-label="code-block-9-1"></a>... <span class="co"># existing code</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1" aria-label="code-block-9-2"></a></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1" aria-label="code-block-9-3"></a>response <span class="op">=</span> requests.get(GEOCODING_API_URL, params<span class="op">=</span>params)</span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1" aria-label="code-block-9-4"></a>geocoding_data <span class="op">=</span> response.json()</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1" aria-label="code-block-9-5"></a></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1" aria-label="code-block-9-6"></a><span class="co"># Check that we got a valid response with at least one result</span></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1" aria-label="code-block-9-7"></a><span class="cf">if</span> <span class="bu">len</span>(geocoding_data[<span class="st">"results"</span>]) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1" aria-label="code-block-9-8"></a>    st.error(<span class="st">"Location not found. Please enter a valid location."</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1" aria-label="code-block-9-9"></a>    st.stop()</span></code></pre>
+</div>
 </div>
 </div>
 </div>
