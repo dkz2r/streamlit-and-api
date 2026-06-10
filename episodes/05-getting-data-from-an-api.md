@@ -221,14 +221,146 @@ daily_data = data["daily"]
 print(daily_data)
 ```
 
+::: callout
+
+### Responsible API Use
+
+When using APIs, it's important to be mindful of how we are using them. Many APIs have rate limits,
+which means that there is a limit to how many requests we can make in a certain time period. If we
+exceed these limits we might be temporarily or permanently blocked from using the API. Always check
+the documentation to see if there are restrictions on how you can use the API, and try to be
+respectful of these limits when building your applications.
+
+:::
+
+::: callout
+
+### Caching API responses
+
+A simple way to be more respectful of API rate limits is to cache the responses we get back from
+the API. This means that, before we submit a request, we first check our local machine to see if
+we have made this exact same request recently, and if so, we can just use the stored data instead.
+
+This can also speed up the application, since reading data from the local machine is usually much
+faster (computationally speaking) than waiting for a round trip data request to the API.
+
+The `requests` library has a built in way to do this with the `requests_cache` library, which you
+can install with `uv add requests_cache`. You can find the documentation for this library here:
+https://requests-cache.readthedocs.io/en/stable/.
+
+:::
+
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Challenge 1:
+## Challenge 1: Use the Open Meteo API to Geocode a City Name
+
+The Open Meteo API has an endpoint for geocoding, which allows us to retrieve the latitude and
+longitude for a given city name. This would make it much easier for users to get the weather data
+for a location, since they wouldn't have to look up the latitude and longitude themselves.
+
+You can find the documentation for the geocoding endpoint here: https://open-meteo.com/en/docs/geocoding-api.
+
+1. Start by adding a text input to your app where users can enter a city name.
+2. When the user hits "return" on the text input, make a request to the geocoding endpoint.
+3. Parse the response to extract the latitude and longitude for the city that the user entered.
+4. Populate the latitude and longitude number inputs in your app with the values you extracted
+   from the geocoding API response.
+
+::: hint
+
+Add the base URL to the top of your file as a constant to make it easier to work with:
+
+```python
+GEOCODING_API_URL = "https://geocoding-api.open-meteo.com/v1/search"
+```
+
+:::
+
+
+::: hint
+
+The geocoding endpoint returns a list of results, since there can be multiple cities with the same
+name. For simplicity, you can use the "count" parameter to limit the results to 1, so you only get
+one result back.
+
+:::
+
 
 
 :::::::::::::::::::::::: solution
 
+```python
+GEOCODING_API_URL = "https://geocoding-api.open-meteo.com/v1/search"
+
+... # existing code
+
+city_name = st.text_input(
+    "Enter a location (e.g., city name or coordinates)", value="Aachen, Germany"
+)
+
+params = {
+    "name": city_name,
+    "count": 1,  # Limit to 1 result for simplicity
+}
+response = requests.get(GEOCODING_API_URL, params=params)
+geocoding_data = response.json()
+
+latitude = geocoding_data["results"][0]["latitude"]
+longitude = geocoding_data["results"][0]["longitude"]
+
+lat_lon_columns = st.columns(2)
+with lat_lon_columns[0]:
+    latitude = st.number_input("Latitude", min_value=-90.0, max_value=90.0, value=latitude)
+with lat_lon_columns[1]:
+    longitude = st.number_input("Longitude", min_value=-180.0, max_value=180.0, value=longitude)
+```
+
+:::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Challenge 2: Error Handling
+
+At the moment, if we make a request to the goecoding API and it doesn't return any results, we just
+get an ugly red error message in our app. See if you can add some error handling to the app to
+catch this error and prevent the later code from trying to run against missing or incorrect
+latitude and longitude values.
+
+Check the streamlit documentation to see if there are are any nice ways to display an error, and
+how to stop the execution of the app if we encounter an error.
+
+::: hint
+
+We still get a response back from the API even if there are no results, so we can just check the
+length of the "results" list in the response, and if it's empty with
+`len(geocoding_data["results"]) == 0`.
+
+:::
+
+::: hint
+
+Look for documentation on `st.error` to display an error message, and `st.stop` to stop the
+execution of the app.
+
+:::
+
+:::::::::::::::::::::::: solution
+
+```python
+... # existing code
+
+response = requests.get(GEOCODING_API_URL, params=params)
+geocoding_data = response.json()
+
+# Check that we got a valid response with at least one result
+if len(geocoding_data["results"]) == 0:
+    st.error("Location not found. Please enter a valid location.")
+    st.stop()
+
+```
 
 :::::::::::::::::::::::::::::::::
 
