@@ -87,11 +87,11 @@ What makes this visualization effective?
 
 :::
 
-### Example: A deliberatly bad visualization
+### Example: A deliberately bad visualization
 
-Here's a deliberatly bad visualization of some random data.
+Here's a deliberately bad visualization of some random data.
 
-![Deliberatly bad visualization](./fig/07-making-visuals/bad-figure-example.PNG){alt="Deliberatly bad visualization"}
+![Deliberately bad visualization](./fig/07-making-visuals/bad-figure-example.PNG){alt="Deliberately bad visualization"}
 
 ::: discussion
 
