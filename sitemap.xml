@@ -13,10 +13,25 @@
     <loc>https://dkz2r.github.io/streamlit-and-api/03-getting-data-from-an-api.html</loc>
   </url>
   <url>
+    <loc>https://dkz2r.github.io/streamlit-and-api/03-layout-widgets-sidebar.html</loc>
+  </url>
+  <url>
+    <loc>https://dkz2r.github.io/streamlit-and-api/04-designing-our-application.html</loc>
+  </url>
+  <url>
     <loc>https://dkz2r.github.io/streamlit-and-api/04-secrets-and-apis.html</loc>
   </url>
   <url>
     <loc>https://dkz2r.github.io/streamlit-and-api/05-building-additional-apps.html</loc>
+  </url>
+  <url>
+    <loc>https://dkz2r.github.io/streamlit-and-api/05-getting-data-from-an-api.html</loc>
+  </url>
+  <url>
+    <loc>https://dkz2r.github.io/streamlit-and-api/06-building-our-app.html</loc>
+  </url>
+  <url>
+    <loc>https://dkz2r.github.io/streamlit-and-api/07-making-visuals.html</loc>
   </url>
   <url>
     <loc>https://dkz2r.github.io/streamlit-and-api/404.html</loc>
@@ -52,10 +67,25 @@
     <loc>https://dkz2r.github.io/streamlit-and-api/instructor/03-getting-data-from-an-api.html</loc>
   </url>
   <url>
+    <loc>https://dkz2r.github.io/streamlit-and-api/instructor/03-layout-widgets-sidebar.html</loc>
+  </url>
+  <url>
+    <loc>https://dkz2r.github.io/streamlit-and-api/instructor/04-designing-our-application.html</loc>
+  </url>
+  <url>
     <loc>https://dkz2r.github.io/streamlit-and-api/instructor/04-secrets-and-apis.html</loc>
   </url>
   <url>
     <loc>https://dkz2r.github.io/streamlit-and-api/instructor/05-building-additional-apps.html</loc>
+  </url>
+  <url>
+    <loc>https://dkz2r.github.io/streamlit-and-api/instructor/05-getting-data-from-an-api.html</loc>
+  </url>
+  <url>
+    <loc>https://dkz2r.github.io/streamlit-and-api/instructor/06-building-our-app.html</loc>
+  </url>
+  <url>
+    <loc>https://dkz2r.github.io/streamlit-and-api/instructor/07-making-visuals.html</loc>
   </url>
   <url>
     <loc>https://dkz2r.github.io/streamlit-and-api/instructor/404.html</loc>
