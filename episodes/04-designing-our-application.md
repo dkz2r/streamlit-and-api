@@ -39,8 +39,6 @@ Open up the Open Meteo API documentation and take a look at the data we can retr
 information can we get from the API? What would make for some interesting visualizations or
 interactions in our application?
 
-::: solution
-
 Some possible ideas for our application could include:
 
 - A line chart showing the temperature over time.
@@ -51,8 +49,6 @@ Some possible ideas for our application could include:
 - Widgets for sunrise and sunset times.
 - A map showing the location of the user and the current weather conditions at that location.
 - An icon showing the current weather conditions (e.g. sunny, cloudy, rainy, etc.)
-
-:::
 
 ::::::
 
@@ -66,13 +62,9 @@ look like:
 What are some other potential user interactions we might consider including to make this even more
 interactive?
 
-::: solution
-
 - Instead of a 24 hour forecast, we could use a dropdown to allow the user to select 3, 5, 7 or 10 day forecasts.
 - We could add a dropdown to select the type of plot to show (e.g. line chart, bar chart, etc.)
 - We could add a dropdown to select hourly or 15 minute data.
-
-:::
 
 ::::::
 

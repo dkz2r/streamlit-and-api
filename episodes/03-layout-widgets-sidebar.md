@@ -308,6 +308,38 @@ Make sure to initialize the session state for the result before the `st.write` s
 
 :::
 
+::: hint
+
+You'll need a function to perform the calculation like this:
+
+```python
+def do_calculation():
+    st.session_state.result = slider_value + new_number
+```
+
+:::
+
+::: hint
+
+A possible solution with important names replaced with underscores:
+
+```python
+if "result" not in _______:
+    ________ = 0
+
+
+def do_calculation():
+    ________ = slider_value + new_number
+
+
+slider_value = st._______("Select a value", -10, 10, 0)
+new_number = st.________("Enter a number", value=0)
+st.button("Calculate", on_click=________)
+st.write(f"Result: {st.session_state.result}")
+```
+
+:::
+
 :::::::::::::::::::::::: solution
 
 ```python
