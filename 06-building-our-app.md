@@ -6,13 +6,15 @@ exercises: 2 # exercise time in minutes
 
 :::::::::::::::::::::::::::::::::::::: questions
 
--
+- How can we take our sketch and turn it into an application?
+- How can we prove that things are happening in our app based on user input?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
--
+- Add an element that reacts to user input
+- Add text elements that populate in response to user input
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -129,8 +131,6 @@ Great! So we know we can get the data from the user. What else can we do with th
 can find something in the Streamlit documentation that will allow us to display this data in a more
 interesting way.
 
-::: solution
-
 Under "Chart elements" in the Streamlit documentation is a widget called `st.map()`, which allows
 to display a map with points on it. This would be a great way to show the user's location on a map!
 Looking at the function parameters, we can see that it accepts a `data` parameter, which is
@@ -140,8 +140,6 @@ to this widget to display the user's location on a map.
 
 We will also want to set the "zoom" parameter to a value that allows us to see the location clearly
 on the map. We will need to tinker to find a good value for this parameter.
-
-:::
 
 ::::::
 
@@ -372,6 +370,28 @@ weather_code_mapping = {
 }
 ```
 
+::: hint
+
+To retrieve a value from a dictionary, you can use the `get` method like this:
+
+```python
+my_dict = [
+    "apple": 2,
+    "banana": 10
+]
+
+user_value = input("Enter a fruit:")
+
+result = my_dict.get(user_value, "Unknown")
+print(f"Value of {user_value} is {result})
+```
+
+`get` works as a safe way of accessing a dict. It takes two parameters: the lookup value and a 
+default. If  the lookup value exists in the dict as a key, then we return that. otherwise, it will
+return the default value.
+
+:::
+
 :::::::::::::::::::::::: solution
 
 ```python
@@ -475,6 +495,6 @@ with col_sunset:
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
--
+- 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::

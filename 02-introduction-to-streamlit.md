@@ -218,6 +218,13 @@ Use the slider example as a reference.
 
 :::
 
+::: hint
+
+You might need to use a conditional statement (`if` ___ :) to keep the text from appearing until
+after the user has written something.
+
+:::
+
 :::::::::::::::::::::::: solution
 
 ```python

@@ -772,6 +772,7 @@ params = {
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
--
+- Long format data is more readily interpreted by Plotly
+- There are a multitude of formatting and style options we can add to a plot to get it to look how we want.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::

@@ -6,13 +6,14 @@ exercises: 2 # exercise time in minutes
 
 :::::::::::::::::::::::::::::::::::::: questions
 
--
+- What other kinds of plots can we make with Plotly?
+- What is variable "binning" and how would it help make data more understandable?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
--
+- Create a Wind Rose plot from our weather data.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -203,10 +204,19 @@ This gives us a much more intuitive plot:
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Challenge 1:
+## Challenge 1: Try some alternate Color Palettes
+
+Check out some of the other color pallets that come with Plotly:
+
+- https://plotly.com/python/discrete-color/#color-sequences-in-plotly-express
+- https://plotly.com/python/builtin-colorscales/#builtin-sequential-color-scales
+
+Try swapping out the line that has `px.colors.sequential.Greens` with some other options, e.g.
+`px.colors.sequential.BuPu` or `px.colors.qualitative.Set1`. Are there any better options?
 
 
 :::::::::::::::::::::::: solution
+
 
 
 :::::::::::::::::::::::::::::::::
@@ -216,6 +226,6 @@ This gives us a much more intuitive plot:
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
--
+- 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::

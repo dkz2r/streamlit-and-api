@@ -6,13 +6,14 @@ exercises: 2 # exercise time in minutes
 
 :::::::::::::::::::::::::::::::::::::: questions
 
--
+- What exactly do we mean by "visualization" and why are they important?
+- What are some important things to keep in mind when creating a visualization?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
--
+- Discuss what makes for a good / bad visualization and critique some examples.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -177,9 +178,26 @@ that goes into more detail on how to make effective visualizations. their ten ru
 9. Message Trumps Beauty
 10. Get the Right Tool
 
-::::::::::::::::::::::::::::::::::::: challenge
+A couple of these rules are particularly relevant for us here:
 
-## Challenge 1: Reviewing a Visualization
+- **Do Not Trust the Defaults**: Plotting libraries are are made to be generic, and they have 
+    reasonable defaults, but unless you are making very quick and dirty plots either for your own
+    data investigation or to show something to a colleague, these defaults can be slightly 
+    unprofessional looking. Take a moment to review things like color pallet, font sizes, labels,
+    and hover formats to ensure that they will effectively convey the information to your audience.
+- **Use Color Effectively**: Consider the colors you use and compare it to the nature of the data
+    you are showing - resist the urge to pick something only because it "looks neat".
+- **Avoid Chartjunk**; We have so many options in these libraries, it can be tempting to turn lots
+    of options on, but sometimes they don't add anything but visual noise, and at worst can obscure
+    the point of the plot.
+- **Message Trumps Beauty**: A very simple plot that effectively answers the question is better 
+    than a complicated one that might confuse the reader. If we're going to show a comparison 
+    between two percents, a pie plot is a perfectly valid visual style to use.
+
+
+::::::::::::::::::::::::::::::::::::: discussion
+
+## Discussion 1: Reviewing a Visualization
 
 Take a look at the following visualizations. What works well? Is there any information that isn't
 clearly conveyed? What would you change to make the visualization more effective?
@@ -192,10 +210,11 @@ clearly conveyed? What would you change to make the visualization more effective
 
 (Source for Visualization 3: [Visual Capitalist](https://www.visualcapitalist.com/ranked-europes-top-economies-in-2026-by-projected-gdp/))
 
-:::::::::::::::::::::::: solution
+Take a look at these visuals.
 
-
-:::::::::::::::::::::::::::::::::
+- Are there any of the "Ten Simple Rules for Better Figures" that these violate?
+- Pick a rule and describe what specific change you would make to address it
+- Are there any other plot types that would be more effective?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -256,6 +275,8 @@ There are no hard and fast rules for which plot type to use, but here are some t
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
--
+- Visualizations need to be quickly and easily understood by the reader
+- Shorthands like color and size can convey meaning right away
+- There are some general "rules" that you should keep in mind when making a visual.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::

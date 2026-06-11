@@ -18,13 +18,13 @@ carpentry: 'incubator'
 carpentry_description: 'Building a Streamlit app that uses an API to retrieve data'
 
 # Overall title for pages.
-title: 'Building a Streamlit App with an API' # FIXME
+title: 'Interactive Data Visualization with Streamlit and Python' # FIXME
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: 2026-03-18~ # FIXME
+created: 2026-03-18 # FIXME
 
 # Comma-separated list of keywords for the lesson
-keywords: 'streamlit, API, Python, uv, virtual environment' # FIXME
+keywords: 'visualization, interactive, streamlit, API, Python, uv, virtual environment' # FIXME
 
 # Life cycle stage of the lesson
 # refer to <https://docs.carpentries.org/resources/curriculum/lesson-life-cycle.html> for details
