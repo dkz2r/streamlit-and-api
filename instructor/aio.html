@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>Building a Streamlit App with an API: All in One View</title>
+<title>Interactive Data Visualization with Streamlit and Python: All in One View</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../assets/themetoggle.js"></script><link rel="stylesheet" type="text/css" href="../assets/styles.css">
 <script src="../assets/scripts.js" type="text/javascript"></script><!-- mathjax --><!-- NOTE: https://docs.mathjax.org/en/latest/output/mathml.html#mathml-support --><!-- Changes from V2 to V4: https://mathjax.github.io/MathJax-demos-web/convert-configuration/convert-configuration.html
@@ -99,7 +99,7 @@
       <img class="small-logo" alt="Building a Streamlit app that uses an API to retrieve data" src="../assets/images/incubator-logo-sm.svg">
 </div>
     <div class="lesson-title-md">
-      Building a Streamlit App with an API
+      Interactive Data Visualization with Streamlit and Python
     </div>
     <div class="search-icon-sm">
       <!-- TODO: do not show until we have search
@@ -110,7 +110,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 <li class="nav-item">
           <span class="lesson-title">
-            Building a Streamlit App with an API
+            Interactive Data Visualization with Streamlit and Python
           </span>
         </li>
         <li class="nav-item">
@@ -660,7 +660,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-02-introduction-to-streamlit"><p>Content from <a href="02-introduction-to-streamlit.html">Introduction to Streamlit</a></p>
 <hr>
-<p>Last updated on 2026-06-10 |
+<p>Last updated on 2026-06-11 |
 
         <a href="https://github.com/dkz2r/streamlit-and-api/edit/main/episodes/02-introduction-to-streamlit.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 20 minutes</p>
@@ -909,6 +909,20 @@ personalized greeting.</p>
 </div>
 </div>
 </div>
+<div id="accordionHint2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint2" aria-expanded="false" aria-controls="collapseHint2">
+  <h4 class="accordion-header" id="headingHint2"> Give me a hint </h4>
+</button>
+<div id="collapseHint2" class="accordion-collapse collapse" data-bs-parent="#accordionHint2" aria-labelledby="headingHint2">
+<div class="accordion-body">
+<p>You might need to use a conditional statement (<code>if</code> ___ :)
+to keep the text from appearing until after the user has written
+something.</p>
+</div>
+</div>
+</div>
+</div>
 <div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
@@ -1029,7 +1043,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-03-layout-widgets-sidebar"><p>Content from <a href="03-layout-widgets-sidebar.html">Layouts, Widgets, and the Sidebar</a></p>
 <hr>
-<p>Last updated on 2026-06-10 |
+<p>Last updated on 2026-06-11 |
 
         <a href="https://github.com/dkz2r/streamlit-and-api/edit/main/episodes/03-layout-widgets-sidebar.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -1364,7 +1378,7 @@ the user to reveal more content. Try creating a section in your app with
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1408,7 +1422,7 @@ clicked.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
   <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
 <p>You’ll need to use a session state to store the result, and a
 callback function to update the result when the button is clicked.</p>
@@ -1421,10 +1435,57 @@ callback function to update the result when the button is clicked.</p>
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint2" aria-expanded="false" aria-controls="collapseHint2">
   <h4 class="accordion-header" id="headingHint2"> Give me a hint </h4>
 </button>
-<div id="collapseHint2" class="accordion-collapse collapse" data-bs-parent="#accordionHint2" aria-labelledby="headingHint2">
+<div id="collapseHint2" class="accordion-collapse collapse" aria-labelledby="headingHint2" data-bs-parent="#accordionHint2">
 <div class="accordion-body">
 <p>Make sure to initialize the session state for the result before the
 <code>st.write</code> statement.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionHint3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint3" aria-expanded="false" aria-controls="collapseHint3">
+  <h4 class="accordion-header" id="headingHint3"> Give me a hint </h4>
+</button>
+<div id="collapseHint3" class="accordion-collapse collapse" aria-labelledby="headingHint3" data-bs-parent="#accordionHint3">
+<div class="accordion-body">
+<p>You’ll need a function to perform the calculation like this:</p>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1" aria-label="code-block-12-1"></a><span class="kw">def</span> do_calculation():</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1" aria-label="code-block-12-2"></a>    st.session_state.result <span class="op">=</span> slider_value <span class="op">+</span> new_number</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionHint4" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint4" aria-expanded="false" aria-controls="collapseHint4">
+  <h4 class="accordion-header" id="headingHint4"> Give me a hint </h4>
+</button>
+<div id="collapseHint4" class="accordion-collapse collapse" aria-labelledby="headingHint4" data-bs-parent="#accordionHint4">
+<div class="accordion-body">
+<p>A possible solution with important names replaced with
+underscores:</p>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1" aria-label="code-block-13-1"></a><span class="cf">if</span> <span class="st">"result"</span> <span class="kw">not</span> <span class="kw">in</span> _______:</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1" aria-label="code-block-13-2"></a>    ________ <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1" aria-label="code-block-13-3"></a></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1" aria-label="code-block-13-4"></a></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1" aria-label="code-block-13-5"></a><span class="kw">def</span> do_calculation():</span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1" aria-label="code-block-13-6"></a>    ________ <span class="op">=</span> slider_value <span class="op">+</span> new_number</span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1" aria-label="code-block-13-7"></a></span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1" aria-label="code-block-13-8"></a></span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1" aria-label="code-block-13-9"></a>slider_value <span class="op">=</span> st._______(<span class="st">"Select a value"</span>, <span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">0</span>)</span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1" aria-label="code-block-13-10"></a>new_number <span class="op">=</span> st.________(<span class="st">"Enter a number"</span>, value<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1" aria-label="code-block-13-11"></a>st.button(<span class="st">"Calculate"</span>, on_click<span class="op">=</span>________)</span>
+<span id="cb13-12"><a href="#cb13-12" tabindex="-1" aria-label="code-block-13-12"></a>st.write(<span class="ss">f"Result: </span><span class="sc">{</span>st<span class="sc">.</span>session_state<span class="sc">.</span>result<span class="sc">}</span><span class="ss">"</span>)</span></code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -1434,23 +1495,23 @@ callback function to update the result when the button is clicked.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb12">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1" aria-label="code-block-12-1"></a><span class="cf">if</span> <span class="st">"result"</span> <span class="kw">not</span> <span class="kw">in</span> st.session_state:</span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1" aria-label="code-block-12-2"></a>    st.session_state.result <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1" aria-label="code-block-12-3"></a></span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1" aria-label="code-block-12-4"></a></span>
-<span id="cb12-5"><a href="#cb12-5" tabindex="-1" aria-label="code-block-12-5"></a><span class="kw">def</span> do_calculation():</span>
-<span id="cb12-6"><a href="#cb12-6" tabindex="-1" aria-label="code-block-12-6"></a>    st.session_state.result <span class="op">=</span> slider_value <span class="op">+</span> new_number</span>
-<span id="cb12-7"><a href="#cb12-7" tabindex="-1" aria-label="code-block-12-7"></a></span>
-<span id="cb12-8"><a href="#cb12-8" tabindex="-1" aria-label="code-block-12-8"></a></span>
-<span id="cb12-9"><a href="#cb12-9" tabindex="-1" aria-label="code-block-12-9"></a>slider_value <span class="op">=</span> st.slider(<span class="st">"Select a value"</span>, <span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">0</span>)</span>
-<span id="cb12-10"><a href="#cb12-10" tabindex="-1" aria-label="code-block-12-10"></a>new_number <span class="op">=</span> st.number_input(<span class="st">"Enter a number"</span>, value<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb12-11"><a href="#cb12-11" tabindex="-1" aria-label="code-block-12-11"></a>st.button(<span class="st">"Calculate"</span>, on_click<span class="op">=</span>do_calculation)</span>
-<span id="cb12-12"><a href="#cb12-12" tabindex="-1" aria-label="code-block-12-12"></a>st.write(<span class="ss">f"Result: </span><span class="sc">{</span>st<span class="sc">.</span>session_state<span class="sc">.</span>result<span class="sc">}</span><span class="ss">"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1" aria-label="code-block-14-1"></a><span class="cf">if</span> <span class="st">"result"</span> <span class="kw">not</span> <span class="kw">in</span> st.session_state:</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1" aria-label="code-block-14-2"></a>    st.session_state.result <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1" aria-label="code-block-14-3"></a></span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1" aria-label="code-block-14-4"></a></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1" aria-label="code-block-14-5"></a><span class="kw">def</span> do_calculation():</span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1" aria-label="code-block-14-6"></a>    st.session_state.result <span class="op">=</span> slider_value <span class="op">+</span> new_number</span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1" aria-label="code-block-14-7"></a></span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1" aria-label="code-block-14-8"></a></span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1" aria-label="code-block-14-9"></a>slider_value <span class="op">=</span> st.slider(<span class="st">"Select a value"</span>, <span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">0</span>)</span>
+<span id="cb14-10"><a href="#cb14-10" tabindex="-1" aria-label="code-block-14-10"></a>new_number <span class="op">=</span> st.number_input(<span class="st">"Enter a number"</span>, value<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb14-11"><a href="#cb14-11" tabindex="-1" aria-label="code-block-14-11"></a>st.button(<span class="st">"Calculate"</span>, on_click<span class="op">=</span>do_calculation)</span>
+<span id="cb14-12"><a href="#cb14-12" tabindex="-1" aria-label="code-block-14-12"></a>st.write(<span class="ss">f"Result: </span><span class="sc">{</span>st<span class="sc">.</span>session_state<span class="sc">.</span>result<span class="sc">}</span><span class="ss">"</span>)</span></code></pre>
 </div>
 </div>
 </div>
@@ -1475,7 +1536,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-04-designing-our-application"><p>Content from <a href="04-designing-our-application.html">Designing our Application</a></p>
 <hr>
-<p>Last updated on 2026-06-10 |
+<p>Last updated on 2026-06-11 |
 
         <a href="https://github.com/dkz2r/streamlit-and-api/edit/main/episodes/04-designing-our-application.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -1539,13 +1600,6 @@ we would find meaningful.</p>
 we can retrieve. What kinds of information can we get from the API? What
 would make for some interesting visualizations or interactions in our
 application?</p>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
-<div class="accordion-body">
 <p>Some possible ideas for our application could include:</p>
 <ul>
 <li>A line chart showing the temperature over time.</li>
@@ -1563,10 +1617,6 @@ rainy, etc.)</li>
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
 <p>For the purposes of this workshop, we’ve gone ahead and made a sketch
 of what our application might look like:</p>
 <figure><img src=".././fig/04-designing-our-application/application_sketch.png" alt="Sketch of our application" class="figure mx-auto d-block"><div class="figcaption">Sketch of our application</div>
@@ -1579,13 +1629,6 @@ of what our application might look like:</p>
 <div class="callout-content">
 <p>What are some other potential user interactions we might consider
 including to make this even more interactive?</p>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
-<div class="accordion-body">
 <ul>
 <li>Instead of a 24 hour forecast, we could use a dropdown to allow the
 user to select 3, 5, 7 or 10 day forecasts.</li>
@@ -1593,10 +1636,6 @@ user to select 3, 5, 7 or 10 day forecasts.</li>
 (e.g. line chart, bar chart, etc.)</li>
 <li>We could add a dropdown to select hourly or 15 minute data.</li>
 </ul>
-</div>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -1648,12 +1687,12 @@ as we go along.</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 
 </div>
@@ -2159,7 +2198,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-06-building-our-app"><p>Content from <a href="06-building-our-app.html">Building our Application</a></p>
 <hr>
-<p>Last updated on 2026-06-10 |
+<p>Last updated on 2026-06-11 |
 
         <a href="https://github.com/dkz2r/streamlit-and-api/edit/main/episodes/06-building-our-app.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -2173,8 +2212,11 @@ any links that you are not going to use.
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>
-</li></ul>
+<ul>
+<li>How can we take our sketch and turn it into an application?</li>
+<li>How can we prove that things are happening in our app based on user
+input?</li>
+</ul>
 </div>
 </div>
 </div>
@@ -2182,8 +2224,10 @@ any links that you are not going to use.
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>
-</li></ul>
+<ul>
+<li>Add an element that reacts to user input</li>
+<li>Add text elements that populate in response to user input</li>
+</ul>
 </div>
 </div>
 </div>
@@ -2333,13 +2377,6 @@ input:</p>
 do with this data. See if you can find something in the Streamlit
 documentation that will allow us to display this data in a more
 interesting way.</p>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
-<div class="accordion-body">
 <p>Under “Chart elements” in the Streamlit documentation is a widget
 called <code>st.map()</code>, which allows to display a map with points
 on it. This would be a great way to show the user’s location on a map!
@@ -2352,10 +2389,6 @@ widget to display the user’s location on a map.</p>
 <p>We will also want to set the “zoom” parameter to a value that allows
 us to see the location clearly on the map. We will need to tinker to
 find a good value for this parameter.</p>
-</div>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -2528,12 +2561,12 @@ the “Current Conditions” metric.</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2618,18 +2651,48 @@ metric instead of the weather code number:</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div id="accordionHint1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
-  <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
+  <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
 <div class="accordion-body">
+<p>To retrieve a value from a dictionary, you can use the
+<code>get</code> method like this:</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1" aria-label="code-block-17-1"></a><span class="cf">with</span> col_icon:</span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1" aria-label="code-block-17-2"></a>    st.metric(label<span class="op">=</span><span class="st">"Current Conditions"</span>, value<span class="op">=</span>weather_code_mapping.get(current_weather_code, <span class="st">"Unknown"</span>), border<span class="op">=</span><span class="va">True</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1" aria-label="code-block-17-1"></a>my_dict <span class="op">=</span> [</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1" aria-label="code-block-17-2"></a>    <span class="st">"apple"</span>: <span class="dv">2</span>,</span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1" aria-label="code-block-17-3"></a>    <span class="st">"banana"</span>: <span class="dv">10</span></span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1" aria-label="code-block-17-4"></a>]</span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1" aria-label="code-block-17-5"></a></span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1" aria-label="code-block-17-6"></a>user_value <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter a fruit:"</span>)</span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1" aria-label="code-block-17-7"></a></span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1" aria-label="code-block-17-8"></a>result <span class="op">=</span> my_dict.get(user_value, <span class="st">"Unknown"</span>)</span>
+<span id="cb17-9"><a href="#cb17-9" tabindex="-1" aria-label="code-block-17-9"></a><span class="bu">print</span>(<span class="ss">f"Value of </span><span class="sc">{</span>user_value<span class="sc">}</span><span class="ss"> is </span><span class="sc">{</span>result<span class="sc">}</span><span class="ss">)</span></span></code></pre>
+</div>
+<p><code>get</code> works as a safe way of accessing a dict. It takes
+two parameters: the lookup value and a default. If the lookup value
+exists in the dict as a key, then we return that. otherwise, it will
+return the default value.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb18">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1" aria-label="code-block-18-1"></a><span class="cf">with</span> col_icon:</span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1" aria-label="code-block-18-2"></a>    st.metric(label<span class="op">=</span><span class="st">"Current Conditions"</span>, value<span class="op">=</span>weather_code_mapping.get(current_weather_code, <span class="st">"Unknown"</span>), border<span class="op">=</span><span class="va">True</span>)</span></code></pre>
 </div>
 </div>
 </div>
@@ -2653,20 +2716,6 @@ temperature, total precipitation</li>
 </div>
 </div>
 </div>
-<div id="accordionHint1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
-  <h4 class="accordion-header" id="headingHint1"> Give me a hint </h4>
-</button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
-<div class="accordion-body">
-<p>You’ll need to make another API request, but this time instead of
-asking for the “current” weather data, you’ll want to ask for the
-“daily” weather data.</p>
-</div>
-</div>
-</div>
-</div>
 <div id="accordionHint2" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint2" aria-expanded="false" aria-controls="collapseHint2">
@@ -2674,10 +2723,9 @@ asking for the “current” weather data, you’ll want to ask for the
 </button>
 <div id="collapseHint2" class="accordion-collapse collapse" aria-labelledby="headingHint2" data-bs-parent="#accordionHint2">
 <div class="accordion-body">
-<p>The “daily” request will return the next 7 days of weather data by
-default. If we only care about the next 24 hours, we can limit the
-result by adding <code>"forecast_days": 1</code> to our API request
-parameters.</p>
+<p>You’ll need to make another API request, but this time instead of
+asking for the “current” weather data, you’ll want to ask for the
+“daily” weather data.</p>
 </div>
 </div>
 </div>
@@ -2689,63 +2737,78 @@ parameters.</p>
 </button>
 <div id="collapseHint3" class="accordion-collapse collapse" aria-labelledby="headingHint3" data-bs-parent="#accordionHint3">
 <div class="accordion-body">
+<p>The “daily” request will return the next 7 days of weather data by
+default. If we only care about the next 24 hours, we can limit the
+result by adding <code>"forecast_days": 1</code> to our API request
+parameters.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionHint4" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint4" aria-expanded="false" aria-controls="collapseHint4">
+  <h4 class="accordion-header" id="headingHint4"> Give me a hint </h4>
+</button>
+<div id="collapseHint4" class="accordion-collapse collapse" aria-labelledby="headingHint4" data-bs-parent="#accordionHint4">
+<div class="accordion-body">
 <p>Remember to use columns to arrange the metrics in rows:</p>
-<div class="codewrapper sourceCode" id="cb18">
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1" aria-label="code-block-18-1"></a></span>
-<span id="cb18-2"><a href="#cb18-2" tabindex="-1" aria-label="code-block-18-2"></a>col1, col2, col3 <span class="op">=</span> st.columns(<span class="dv">3</span>)</span>
-<span id="cb18-3"><a href="#cb18-3" tabindex="-1" aria-label="code-block-18-3"></a><span class="cf">with</span> col1:</span>
-<span id="cb18-4"><a href="#cb18-4" tabindex="-1" aria-label="code-block-18-4"></a>    <span class="co"># code for first metric</span></span>
-<span id="cb18-5"><a href="#cb18-5" tabindex="-1" aria-label="code-block-18-5"></a><span class="cf">with</span> col2:</span>
-<span id="cb18-6"><a href="#cb18-6" tabindex="-1" aria-label="code-block-18-6"></a>    <span class="co"># code for second metric</span></span>
-<span id="cb18-7"><a href="#cb18-7" tabindex="-1" aria-label="code-block-18-7"></a><span class="cf">with</span> col3:</span>
-<span id="cb18-8"><a href="#cb18-8" tabindex="-1" aria-label="code-block-18-8"></a>    <span class="co"># code for third metric</span></span>
-<span id="cb18-9"><a href="#cb18-9" tabindex="-1" aria-label="code-block-18-9"></a></span>
-<span id="cb18-10"><a href="#cb18-10" tabindex="-1" aria-label="code-block-18-10"></a>:::</span>
-<span id="cb18-11"><a href="#cb18-11" tabindex="-1" aria-label="code-block-18-11"></a></span>
-<span id="cb18-12"><a href="#cb18-12" tabindex="-1" aria-label="code-block-18-12"></a>:::::::::::::::::::::::: solution</span>
-<span id="cb18-13"><a href="#cb18-13" tabindex="-1" aria-label="code-block-18-13"></a></span>
-<span id="cb18-14"><a href="#cb18-14" tabindex="-1" aria-label="code-block-18-14"></a>```python</span>
-<span id="cb18-15"><a href="#cb18-15" tabindex="-1" aria-label="code-block-18-15"></a>parameters_to_request <span class="op">=</span> [</span>
-<span id="cb18-16"><a href="#cb18-16" tabindex="-1" aria-label="code-block-18-16"></a>    <span class="st">"temperature_2m_max"</span>,</span>
-<span id="cb18-17"><a href="#cb18-17" tabindex="-1" aria-label="code-block-18-17"></a>    <span class="st">"temperature_2m_min"</span>,</span>
-<span id="cb18-18"><a href="#cb18-18" tabindex="-1" aria-label="code-block-18-18"></a>    <span class="st">"precipitation_sum"</span>,</span>
-<span id="cb18-19"><a href="#cb18-19" tabindex="-1" aria-label="code-block-18-19"></a>    <span class="st">"sunrise"</span>,</span>
-<span id="cb18-20"><a href="#cb18-20" tabindex="-1" aria-label="code-block-18-20"></a>    <span class="st">"sunset"</span></span>
-<span id="cb18-21"><a href="#cb18-21" tabindex="-1" aria-label="code-block-18-21"></a>]</span>
-<span id="cb18-22"><a href="#cb18-22" tabindex="-1" aria-label="code-block-18-22"></a>params <span class="op">=</span> {</span>
-<span id="cb18-23"><a href="#cb18-23" tabindex="-1" aria-label="code-block-18-23"></a>    <span class="st">"latitude"</span>: latitude,</span>
-<span id="cb18-24"><a href="#cb18-24" tabindex="-1" aria-label="code-block-18-24"></a>    <span class="st">"longitude"</span>: longitude,</span>
-<span id="cb18-25"><a href="#cb18-25" tabindex="-1" aria-label="code-block-18-25"></a>    <span class="st">"daily"</span>: <span class="st">","</span>.join(parameters_to_request),</span>
-<span id="cb18-26"><a href="#cb18-26" tabindex="-1" aria-label="code-block-18-26"></a>    <span class="st">"forecast_days"</span>: <span class="dv">1</span></span>
-<span id="cb18-27"><a href="#cb18-27" tabindex="-1" aria-label="code-block-18-27"></a>}</span>
-<span id="cb18-28"><a href="#cb18-28" tabindex="-1" aria-label="code-block-18-28"></a></span>
-<span id="cb18-29"><a href="#cb18-29" tabindex="-1" aria-label="code-block-18-29"></a>response <span class="op">=</span> requests.get(API_URL, params<span class="op">=</span>params)</span>
-<span id="cb18-30"><a href="#cb18-30" tabindex="-1" aria-label="code-block-18-30"></a>daily_data_json <span class="op">=</span> response.json()</span>
-<span id="cb18-31"><a href="#cb18-31" tabindex="-1" aria-label="code-block-18-31"></a></span>
-<span id="cb18-32"><a href="#cb18-32" tabindex="-1" aria-label="code-block-18-32"></a>st.write(daily_data_json) <span class="co"># Print the raw JSON data to the app to see the structure of the data</span></span>
-<span id="cb18-33"><a href="#cb18-33" tabindex="-1" aria-label="code-block-18-33"></a></span>
-<span id="cb18-34"><a href="#cb18-34" tabindex="-1" aria-label="code-block-18-34"></a>daily_temperature_max <span class="op">=</span> daily_data_json[<span class="st">"daily"</span>][<span class="st">"temperature_2m_max"</span>][<span class="dv">0</span>]</span>
-<span id="cb18-35"><a href="#cb18-35" tabindex="-1" aria-label="code-block-18-35"></a>daily_temperature_min <span class="op">=</span> daily_data_json[<span class="st">"daily"</span>][<span class="st">"temperature_2m_min"</span>][<span class="dv">0</span>]</span>
-<span id="cb18-36"><a href="#cb18-36" tabindex="-1" aria-label="code-block-18-36"></a>daily_precipitation <span class="op">=</span> daily_data_json[<span class="st">"daily"</span>][<span class="st">"precipitation_sum"</span>][<span class="dv">0</span>]</span>
-<span id="cb18-37"><a href="#cb18-37" tabindex="-1" aria-label="code-block-18-37"></a>daily_sunrise <span class="op">=</span> daily_data_json[<span class="st">"daily"</span>][<span class="st">"sunrise"</span>][<span class="dv">0</span>]</span>
-<span id="cb18-38"><a href="#cb18-38" tabindex="-1" aria-label="code-block-18-38"></a>daily_sunset <span class="op">=</span> daily_data_json[<span class="st">"daily"</span>][<span class="st">"sunset"</span>][<span class="dv">0</span>]</span>
-<span id="cb18-39"><a href="#cb18-39" tabindex="-1" aria-label="code-block-18-39"></a></span>
-<span id="cb18-40"><a href="#cb18-40" tabindex="-1" aria-label="code-block-18-40"></a>st.write(<span class="st">"24 Hour Forecast:"</span>)</span>
-<span id="cb18-41"><a href="#cb18-41" tabindex="-1" aria-label="code-block-18-41"></a>col_daily_max, col_daily_min, col_daily_precipitation <span class="op">=</span> st.columns(<span class="dv">3</span>)</span>
-<span id="cb18-42"><a href="#cb18-42" tabindex="-1" aria-label="code-block-18-42"></a><span class="cf">with</span> col_daily_max:</span>
-<span id="cb18-43"><a href="#cb18-43" tabindex="-1" aria-label="code-block-18-43"></a>    st.metric(label<span class="op">=</span><span class="st">"High"</span>, value<span class="op">=</span>daily_temperature_max, <span class="bu">format</span><span class="op">=</span><span class="st">"</span><span class="sc">%.1f</span><span class="st"> °C"</span>, border<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb18-44"><a href="#cb18-44" tabindex="-1" aria-label="code-block-18-44"></a><span class="cf">with</span> col_daily_min:</span>
-<span id="cb18-45"><a href="#cb18-45" tabindex="-1" aria-label="code-block-18-45"></a>    st.metric(label<span class="op">=</span><span class="st">"Low"</span>, value<span class="op">=</span>daily_temperature_min, <span class="bu">format</span><span class="op">=</span><span class="st">"</span><span class="sc">%.1f</span><span class="st"> °C"</span>, border<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb18-46"><a href="#cb18-46" tabindex="-1" aria-label="code-block-18-46"></a><span class="cf">with</span> col_daily_precipitation:</span>
-<span id="cb18-47"><a href="#cb18-47" tabindex="-1" aria-label="code-block-18-47"></a>    st.metric(label<span class="op">=</span><span class="st">"Precipitation"</span>, value<span class="op">=</span>daily_precipitation, <span class="bu">format</span><span class="op">=</span><span class="st">"</span><span class="sc">%.1f</span><span class="st"> mm"</span>, border<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb18-48"><a href="#cb18-48" tabindex="-1" aria-label="code-block-18-48"></a></span>
-<span id="cb18-49"><a href="#cb18-49" tabindex="-1" aria-label="code-block-18-49"></a>col_sunrise, col_sunset <span class="op">=</span> st.columns(<span class="dv">2</span>)</span>
-<span id="cb18-50"><a href="#cb18-50" tabindex="-1" aria-label="code-block-18-50"></a><span class="cf">with</span> col_sunrise:</span>
-<span id="cb18-51"><a href="#cb18-51" tabindex="-1" aria-label="code-block-18-51"></a>    st.metric(label<span class="op">=</span><span class="st">"Sunrise"</span>, value<span class="op">=</span>daily_sunrise, border<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb18-52"><a href="#cb18-52" tabindex="-1" aria-label="code-block-18-52"></a><span class="cf">with</span> col_sunset:</span>
-<span id="cb18-53"><a href="#cb18-53" tabindex="-1" aria-label="code-block-18-53"></a>    st.metric(label<span class="op">=</span><span class="st">"Sunset"</span>, value<span class="op">=</span>daily_sunset, border<span class="op">=</span><span class="va">True</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1" aria-label="code-block-19-1"></a></span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1" aria-label="code-block-19-2"></a>col1, col2, col3 <span class="op">=</span> st.columns(<span class="dv">3</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1" aria-label="code-block-19-3"></a><span class="cf">with</span> col1:</span>
+<span id="cb19-4"><a href="#cb19-4" tabindex="-1" aria-label="code-block-19-4"></a>    <span class="co"># code for first metric</span></span>
+<span id="cb19-5"><a href="#cb19-5" tabindex="-1" aria-label="code-block-19-5"></a><span class="cf">with</span> col2:</span>
+<span id="cb19-6"><a href="#cb19-6" tabindex="-1" aria-label="code-block-19-6"></a>    <span class="co"># code for second metric</span></span>
+<span id="cb19-7"><a href="#cb19-7" tabindex="-1" aria-label="code-block-19-7"></a><span class="cf">with</span> col3:</span>
+<span id="cb19-8"><a href="#cb19-8" tabindex="-1" aria-label="code-block-19-8"></a>    <span class="co"># code for third metric</span></span>
+<span id="cb19-9"><a href="#cb19-9" tabindex="-1" aria-label="code-block-19-9"></a></span>
+<span id="cb19-10"><a href="#cb19-10" tabindex="-1" aria-label="code-block-19-10"></a>:::</span>
+<span id="cb19-11"><a href="#cb19-11" tabindex="-1" aria-label="code-block-19-11"></a></span>
+<span id="cb19-12"><a href="#cb19-12" tabindex="-1" aria-label="code-block-19-12"></a>:::::::::::::::::::::::: solution</span>
+<span id="cb19-13"><a href="#cb19-13" tabindex="-1" aria-label="code-block-19-13"></a></span>
+<span id="cb19-14"><a href="#cb19-14" tabindex="-1" aria-label="code-block-19-14"></a>```python</span>
+<span id="cb19-15"><a href="#cb19-15" tabindex="-1" aria-label="code-block-19-15"></a>parameters_to_request <span class="op">=</span> [</span>
+<span id="cb19-16"><a href="#cb19-16" tabindex="-1" aria-label="code-block-19-16"></a>    <span class="st">"temperature_2m_max"</span>,</span>
+<span id="cb19-17"><a href="#cb19-17" tabindex="-1" aria-label="code-block-19-17"></a>    <span class="st">"temperature_2m_min"</span>,</span>
+<span id="cb19-18"><a href="#cb19-18" tabindex="-1" aria-label="code-block-19-18"></a>    <span class="st">"precipitation_sum"</span>,</span>
+<span id="cb19-19"><a href="#cb19-19" tabindex="-1" aria-label="code-block-19-19"></a>    <span class="st">"sunrise"</span>,</span>
+<span id="cb19-20"><a href="#cb19-20" tabindex="-1" aria-label="code-block-19-20"></a>    <span class="st">"sunset"</span></span>
+<span id="cb19-21"><a href="#cb19-21" tabindex="-1" aria-label="code-block-19-21"></a>]</span>
+<span id="cb19-22"><a href="#cb19-22" tabindex="-1" aria-label="code-block-19-22"></a>params <span class="op">=</span> {</span>
+<span id="cb19-23"><a href="#cb19-23" tabindex="-1" aria-label="code-block-19-23"></a>    <span class="st">"latitude"</span>: latitude,</span>
+<span id="cb19-24"><a href="#cb19-24" tabindex="-1" aria-label="code-block-19-24"></a>    <span class="st">"longitude"</span>: longitude,</span>
+<span id="cb19-25"><a href="#cb19-25" tabindex="-1" aria-label="code-block-19-25"></a>    <span class="st">"daily"</span>: <span class="st">","</span>.join(parameters_to_request),</span>
+<span id="cb19-26"><a href="#cb19-26" tabindex="-1" aria-label="code-block-19-26"></a>    <span class="st">"forecast_days"</span>: <span class="dv">1</span></span>
+<span id="cb19-27"><a href="#cb19-27" tabindex="-1" aria-label="code-block-19-27"></a>}</span>
+<span id="cb19-28"><a href="#cb19-28" tabindex="-1" aria-label="code-block-19-28"></a></span>
+<span id="cb19-29"><a href="#cb19-29" tabindex="-1" aria-label="code-block-19-29"></a>response <span class="op">=</span> requests.get(API_URL, params<span class="op">=</span>params)</span>
+<span id="cb19-30"><a href="#cb19-30" tabindex="-1" aria-label="code-block-19-30"></a>daily_data_json <span class="op">=</span> response.json()</span>
+<span id="cb19-31"><a href="#cb19-31" tabindex="-1" aria-label="code-block-19-31"></a></span>
+<span id="cb19-32"><a href="#cb19-32" tabindex="-1" aria-label="code-block-19-32"></a>st.write(daily_data_json) <span class="co"># Print the raw JSON data to the app to see the structure of the data</span></span>
+<span id="cb19-33"><a href="#cb19-33" tabindex="-1" aria-label="code-block-19-33"></a></span>
+<span id="cb19-34"><a href="#cb19-34" tabindex="-1" aria-label="code-block-19-34"></a>daily_temperature_max <span class="op">=</span> daily_data_json[<span class="st">"daily"</span>][<span class="st">"temperature_2m_max"</span>][<span class="dv">0</span>]</span>
+<span id="cb19-35"><a href="#cb19-35" tabindex="-1" aria-label="code-block-19-35"></a>daily_temperature_min <span class="op">=</span> daily_data_json[<span class="st">"daily"</span>][<span class="st">"temperature_2m_min"</span>][<span class="dv">0</span>]</span>
+<span id="cb19-36"><a href="#cb19-36" tabindex="-1" aria-label="code-block-19-36"></a>daily_precipitation <span class="op">=</span> daily_data_json[<span class="st">"daily"</span>][<span class="st">"precipitation_sum"</span>][<span class="dv">0</span>]</span>
+<span id="cb19-37"><a href="#cb19-37" tabindex="-1" aria-label="code-block-19-37"></a>daily_sunrise <span class="op">=</span> daily_data_json[<span class="st">"daily"</span>][<span class="st">"sunrise"</span>][<span class="dv">0</span>]</span>
+<span id="cb19-38"><a href="#cb19-38" tabindex="-1" aria-label="code-block-19-38"></a>daily_sunset <span class="op">=</span> daily_data_json[<span class="st">"daily"</span>][<span class="st">"sunset"</span>][<span class="dv">0</span>]</span>
+<span id="cb19-39"><a href="#cb19-39" tabindex="-1" aria-label="code-block-19-39"></a></span>
+<span id="cb19-40"><a href="#cb19-40" tabindex="-1" aria-label="code-block-19-40"></a>st.write(<span class="st">"24 Hour Forecast:"</span>)</span>
+<span id="cb19-41"><a href="#cb19-41" tabindex="-1" aria-label="code-block-19-41"></a>col_daily_max, col_daily_min, col_daily_precipitation <span class="op">=</span> st.columns(<span class="dv">3</span>)</span>
+<span id="cb19-42"><a href="#cb19-42" tabindex="-1" aria-label="code-block-19-42"></a><span class="cf">with</span> col_daily_max:</span>
+<span id="cb19-43"><a href="#cb19-43" tabindex="-1" aria-label="code-block-19-43"></a>    st.metric(label<span class="op">=</span><span class="st">"High"</span>, value<span class="op">=</span>daily_temperature_max, <span class="bu">format</span><span class="op">=</span><span class="st">"</span><span class="sc">%.1f</span><span class="st"> °C"</span>, border<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb19-44"><a href="#cb19-44" tabindex="-1" aria-label="code-block-19-44"></a><span class="cf">with</span> col_daily_min:</span>
+<span id="cb19-45"><a href="#cb19-45" tabindex="-1" aria-label="code-block-19-45"></a>    st.metric(label<span class="op">=</span><span class="st">"Low"</span>, value<span class="op">=</span>daily_temperature_min, <span class="bu">format</span><span class="op">=</span><span class="st">"</span><span class="sc">%.1f</span><span class="st"> °C"</span>, border<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb19-46"><a href="#cb19-46" tabindex="-1" aria-label="code-block-19-46"></a><span class="cf">with</span> col_daily_precipitation:</span>
+<span id="cb19-47"><a href="#cb19-47" tabindex="-1" aria-label="code-block-19-47"></a>    st.metric(label<span class="op">=</span><span class="st">"Precipitation"</span>, value<span class="op">=</span>daily_precipitation, <span class="bu">format</span><span class="op">=</span><span class="st">"</span><span class="sc">%.1f</span><span class="st"> mm"</span>, border<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb19-48"><a href="#cb19-48" tabindex="-1" aria-label="code-block-19-48"></a></span>
+<span id="cb19-49"><a href="#cb19-49" tabindex="-1" aria-label="code-block-19-49"></a>col_sunrise, col_sunset <span class="op">=</span> st.columns(<span class="dv">2</span>)</span>
+<span id="cb19-50"><a href="#cb19-50" tabindex="-1" aria-label="code-block-19-50"></a><span class="cf">with</span> col_sunrise:</span>
+<span id="cb19-51"><a href="#cb19-51" tabindex="-1" aria-label="code-block-19-51"></a>    st.metric(label<span class="op">=</span><span class="st">"Sunrise"</span>, value<span class="op">=</span>daily_sunrise, border<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb19-52"><a href="#cb19-52" tabindex="-1" aria-label="code-block-19-52"></a><span class="cf">with</span> col_sunset:</span>
+<span id="cb19-53"><a href="#cb19-53" tabindex="-1" aria-label="code-block-19-53"></a>    st.metric(label<span class="op">=</span><span class="st">"Sunset"</span>, value<span class="op">=</span>daily_sunset, border<span class="op">=</span><span class="va">True</span>)</span></code></pre>
 </div>
 </div>
 </div>
@@ -2769,7 +2832,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-07-making-visuals"><p>Content from <a href="07-making-visuals.html">Making Visuals</a></p>
 <hr>
-<p>Last updated on 2026-06-10 |
+<p>Last updated on 2026-06-11 |
 
         <a href="https://github.com/dkz2r/streamlit-and-api/edit/main/episodes/07-making-visuals.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -2783,8 +2846,12 @@ any links that you are not going to use.
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>
-</li></ul>
+<ul>
+<li>What exactly do we mean by “visualization” and why are they
+important?</li>
+<li>What are some important things to keep in mind when creating a
+visualization?</li>
+</ul>
 </div>
 </div>
 </div>
@@ -2792,8 +2859,10 @@ any links that you are not going to use.
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>
-</li></ul>
+<ul>
+<li>Discuss what makes for a good / bad visualization and critique some
+examples.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -3003,13 +3072,38 @@ make effective visualizations. their ten rules are:</p>
 <li>Message Trumps Beauty</li>
 <li>Get the Right Tool</li>
 </ol>
-<div id="challenge-1-reviewing-a-visualization" class="callout challenge">
+<p>A couple of these rules are particularly relevant for us here:</p>
+<ul>
+<li>
+<strong>Do Not Trust the Defaults</strong>: Plotting libraries are
+are made to be generic, and they have reasonable defaults, but unless
+you are making very quick and dirty plots either for your own data
+investigation or to show something to a colleague, these defaults can be
+slightly unprofessional looking. Take a moment to review things like
+color pallet, font sizes, labels, and hover formats to ensure that they
+will effectively convey the information to your audience.</li>
+<li>
+<strong>Use Color Effectively</strong>: Consider the colors you use
+and compare it to the nature of the data you are showing - resist the
+urge to pick something only because it “looks neat”.</li>
+<li>
+<strong>Avoid Chartjunk</strong>; We have so many options in these
+libraries, it can be tempting to turn lots of options on, but sometimes
+they don’t add anything but visual noise, and at worst can obscure the
+point of the plot.</li>
+<li>
+<strong>Message Trumps Beauty</strong>: A very simple plot that
+effectively answers the question is better than a complicated one that
+might confuse the reader. If we’re going to show a comparison between
+two percents, a pie plot is a perfectly valid visual style to use.</li>
+</ul>
+<div id="discussion-1-reviewing-a-visualization" class="callout discussion">
 <div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
+<i class="callout-icon" data-feather="message-circle"></i>
 </div>
-<span class="callout-header">Challenge</span>
-<div id="challenge-1-reviewing-a-visualization" class="callout-inner">
-<h3 class="callout-title">Challenge 1: Reviewing a Visualization</h3>
+<span class="callout-header">Discussion</span>
+<div id="discussion-1-reviewing-a-visualization" class="callout-inner">
+<h3 class="callout-title">Discussion 1: Reviewing a Visualization</h3>
 <div class="callout-content">
 <p>Take a look at the following visualizations. What works well? Is
 there any information that isn’t clearly conveyed? What would you change
@@ -3019,18 +3113,14 @@ to make the visualization more effective?</p>
 </figure><figure><img src=".././fig/07-making-visuals/viz-review-3.PNG" alt="Visualization 3 for review" class="figure mx-auto d-block"><div class="figcaption">Visualization 3</div>
 </figure><p>(Source for Visualization 3: <a href="https://www.visualcapitalist.com/ranked-europes-top-economies-in-2026-by-projected-gdp/" class="external-link">Visual
 Capitalist</a>)</p>
-</div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
-<div class="accordion-body">
-
-</div>
+<p>Take a look at these visuals.</p>
+<ul>
+<li>Are there any of the “Ten Simple Rules for Better Figures” that
+these violate?</li>
+<li>Pick a rule and describe what specific change you would make to
+address it</li>
+<li>Are there any other plot types that would be more effective?</li>
+</ul>
 </div>
 </div>
 </div>
@@ -3067,12 +3157,12 @@ Documentation</a> for ideas.</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>There are no hard and fast rules for which plot type to use, but here
 are some thoughts:</p>
@@ -3122,8 +3212,13 @@ value A and value B</div>
 <span class="callout-header">Key Points</span>
 <div class="callout-inner">
 <div class="callout-content">
-<ul><li>
-</li></ul>
+<ul>
+<li>Visualizations need to be quickly and easily understood by the
+reader</li>
+<li>Shorthands like color and size can convey meaning right away</li>
+<li>There are some general “rules” that you should keep in mind when
+making a visual.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -3133,7 +3228,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-08-working-with-plotly"><p>Content from <a href="08-working-with-plotly.html">Working with Plotly</a></p>
 <hr>
-<p>Last updated on 2026-06-10 |
+<p>Last updated on 2026-06-11 |
 
         <a href="https://github.com/dkz2r/streamlit-and-api/edit/main/episodes/08-working-with-plotly.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -4021,8 +4116,11 @@ call parameters:</p>
 <span class="callout-header">Key Points</span>
 <div class="callout-inner">
 <div class="callout-content">
-<ul><li>
-</li></ul>
+<ul>
+<li>Long format data is more readily interpreted by Plotly</li>
+<li>There are a multitude of formatting and style options we can add to
+a plot to get it to look how we want.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -4032,7 +4130,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-09-other-plots"><p>Content from <a href="09-other-plots.html">Other Plots</a></p>
 <hr>
-<p>Last updated on 2026-06-10 |
+<p>Last updated on 2026-06-11 |
 
         <a href="https://github.com/dkz2r/streamlit-and-api/edit/main/episodes/09-other-plots.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 12 minutes</p>
@@ -4046,8 +4144,11 @@ any links that you are not going to use.
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<ul><li>
-</li></ul>
+<ul>
+<li>What other kinds of plots can we make with Plotly?</li>
+<li>What is variable “binning” and how would it help make data more
+understandable?</li>
+</ul>
 </div>
 </div>
 </div>
@@ -4055,8 +4156,9 @@ any links that you are not going to use.
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<ul><li>
-</li></ul>
+<ul>
+<li>Create a Wind Rose plot from our weather data.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -4255,15 +4357,25 @@ look nicer:</p>
 </div>
 <p>This gives us a much more intuitive plot:</p>
 <figure><img src=".././fig/09-other-plots/wind-rose-final.PNG.jpg" alt="Wind Rose Plot with Custom Colors" class="figure mx-auto d-block"><div class="figcaption">Wind Rose Plot with Custom Colors</div>
-</figure><div id="challenge-1" class="callout challenge">
+</figure><div id="challenge-1-try-some-alternate-color-palettes" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge 1:</h3>
+<div id="challenge-1-try-some-alternate-color-palettes" class="callout-inner">
+<h3 class="callout-title">Challenge 1: Try some alternate Color
+Palettes</h3>
 <div class="callout-content">
-
+<p>Check out some of the other color pallets that come with Plotly:</p>
+<ul>
+<li><a href="https://plotly.com/python/discrete-color/#color-sequences-in-plotly-express" class="external-link uri">https://plotly.com/python/discrete-color/#color-sequences-in-plotly-express</a></li>
+<li><a href="https://plotly.com/python/builtin-colorscales/#builtin-sequential-color-scales" class="external-link uri">https://plotly.com/python/builtin-colorscales/#builtin-sequential-color-scales</a></li>
+</ul>
+<p>Try swapping out the line that has
+<code>px.colors.sequential.Greens</code> with some other options, e.g.
+<code>px.colors.sequential.BuPu</code> or
+<code>px.colors.qualitative.Set1</code>. Are there any better
+options?</p>
 </div>
 </div>
 </div>
@@ -4339,14 +4451,14 @@ any links that you are not going to use.
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/LearningResource/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
-  "keywords": "streamlit, API, Python, uv, virtual environment",
+  "keywords": "visualization, interactive, streamlit, API, Python, uv, virtual environment",
   "name": "All in One View",
   "creativeWorkStatus": "active",
   "url": "https://dkz2r.github.io/streamlit-and-api/instructor/aio.html",
   "identifier": "https://dkz2r.github.io/streamlit-and-api/instructor/aio.html",
   "dateCreated": "2026-03-18",
-  "dateModified": "2026-06-10",
-  "datePublished": "2026-06-10"
+  "dateModified": "2026-06-11",
+  "datePublished": "2026-06-11"
 }
 
   </script><script>
